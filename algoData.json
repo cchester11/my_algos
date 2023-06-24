@@ -1,0 +1,12 @@
+[
+      {
+            "name": "palindromeChecker",
+            "date": "06/24/2023",
+            "code": "function palindromeChecker (word) {\n  let reference = ''\n  for(let i = word.length - 1; i >= 0; i --) {\n    reference += word[i]\n  }\n  \n  if(word === reference) {\n    return true\n  }\n  \n  return false\n}\n\nconsole.log(palindromeChecker('level'))"
+      },
+      {
+            "name": "sumOfDigits",
+            "date": "06/24/2023",
+            "code": "function sumOfDigits(numbers) {\n  let stringify = numbers.toString();\n  let sum = 0;\n  \n  for (let i = 0; i < stringify.length; i++) {\n    let curr = parseInt(stringify[i], 10);\n    sum += curr;\n  }\n  \n  return sum;\n}\n\nconsole.log(sumOfDigits(4282)); // Output: 16"
+      }
+]
