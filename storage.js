@@ -5,13 +5,13 @@ function storeAlgorithm(name, date, code) {
       const filePath = path.resolve(__dirname, 'algoData.json')
 
       if (path.isAbsolute(filePath)) {
-            let data = []
+            let data;
             if (fs.existsSync('/algoData.json')) {
                   const contents = fs.readFileSync(filePath, 'utf8')
                   storage = JSON.parse(contents)
             }
 
-            data.push({ name, date, code })
+            data = { name, date, code }
 
             const dataToJSON = JSON.stringify(data, null, 2)
 
