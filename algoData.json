@@ -1,19 +1,24 @@
 {
-      "algorithm_storage": [
-            {
-                  "name": "palindromeChecker",
-                  "date": "06/24/2023",
-                  "code": "function palindromeChecker (word) {\n  let reference = ''\n  for(let i = word.length - 1; i >= 0; i --) {\n    reference += word[i]\n  }\n  \n  if(word === reference) {\n    return true\n  }\n  \n  return false\n}\n\nconsole.log(palindromeChecker('level'))"
-            },
-            {
-                  "name": "sumOfDigits",
-                  "date": "06/24/2023",
-                  "code": "function sumOfDigits(numbers) {\n  let stringify = numbers.toString();\n  let sum = 0;\n  \n  for (let i = 0; i < stringify.length; i++) {\n    let curr = parseInt(stringify[i], 10);\n    sum += curr;\n  }\n  \n  return sum;\n}\n\nconsole.log(sumOfDigits(4282)); // Output: 16"
-            },
-            {
-                  "name": "reverse string",
-                  "date": "06/24/2023",
-                  "code": "function reversal () {\n  let hello = 'hello'\n  let algo = 'algorithm'\n  let algo_rev = ''\n  let hello_rev = ''\n\n  for(let i = hello.length - 1; i >= 0; i --) {\n    hello_rev += hello[i]\n  }\n  for(let i = algo.length - 1; i >= 0; i --) {\n    algo_rev += algo[i]\n  }\n\n  return [hello_rev, algo_rev]\n}\n\nconsole.log(reversal())"
-            }
-      ]
+  "algorithm_storage": [
+    {
+      "name": "palindromeChecker",
+      "date": "06/24/2023",
+      "code": "function palindromeChecker (word) {\n  let reference = ''\n  for(let i = word.length - 1; i >= 0; i --) {\n    reference += word[i]\n  }\n  \n  if(word === reference) {\n    return true\n  }\n  \n  return false\n}\n\nconsole.log(palindromeChecker('level'))"
+    },
+    {
+      "name": "sumOfDigits",
+      "date": "06/24/2023",
+      "code": "function sumOfDigits(numbers) {\n  let stringify = numbers.toString();\n  let sum = 0;\n  \n  for (let i = 0; i < stringify.length; i++) {\n    let curr = parseInt(stringify[i], 10);\n    sum += curr;\n  }\n  \n  return sum;\n}\n\nconsole.log(sumOfDigits(4282)); // Output: 16"
+    },
+    {
+      "name": "reverse string",
+      "date": "06/24/2023",
+      "code": "function reversal () {\n  let hello = 'hello'\n  let algo = 'algorithm'\n  let algo_rev = ''\n  let hello_rev = ''\n\n  for(let i = hello.length - 1; i >= 0; i --) {\n    hello_rev += hello[i]\n  }\n  for(let i = algo.length - 1; i >= 0; i --) {\n    algo_rev += algo[i]\n  }\n\n  return [hello_rev, algo_rev]\n}\n\nconsole.log(reversal())"
+    },
+    {
+      "name": "findMaxNumber",
+      "date": "06/26/2023",
+      "code": "let test1 = [5, 2, 9, 1, 7]\nlet test2 = [10, 6, 3, 8, 4]\nlet test3 = [-1, -5, -3, -2, -4]\n\nfunction findMaxNumber (array) {\n  let maxNum = 0 \n  \n  for(let i = 0; i < array.length; i ++) {\n    let curr = array[i]\n    \n    if(curr > maxNum) {\n      maxNum = curr\n    }\n  }\n  \n  return maxNum\n}\n\nconsole.log(findMaxNumber(test1), findMaxNumber(test2), findMaxNumber(test3))"
+    }
+  ]
 }
