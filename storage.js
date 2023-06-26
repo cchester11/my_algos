@@ -6,7 +6,8 @@ const path = require('path')
 // accepts algo name, date, and code
 function storeAlgorithm(name, date, code) {
       // resolve the path between this utility and the pwd
-      const filePath = path.resolve(__dirname, 'algoData.json')
+      const filePath = path.resolve(process.cwd(), 'algoData.json')
+      console.log('Your file path: '  + filePath)
 
       // check for errors in path
       if (path.isAbsolute(filePath)) {
@@ -38,13 +39,9 @@ function storeAlgorithm(name, date, code) {
             const dataToJSON = JSON.stringify(storage, null, 2)
 
             // fs method for writing to json file
-            fs.writeFileSync('./algoData.json', dataToJSON, {
-                  encoding: 'utf8',
-                  flag: 'a'
+            fs.writeFile('./algoData.json', dataToJSON, () => {
+                  console.log('Algorithm(s) saved to storage file') 
             })
-
-            console.log(filePath)
-            console.log('Algorithm(s) saved to storage file')
       } else {
             return 'Incohesive file path'
       }
