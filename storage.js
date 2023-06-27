@@ -31,7 +31,18 @@ function storeAlgorithm(name, date, difficulty, code) {
             if(check) {
                   return 'Found a matching name property in the database. Please provide a unique name for your algorithm'
             } else {
-                  // if no duplicate
+                  let check = []
+                  let array = code.split('')
+
+                  for(let i = 0; i < array.length; i ++) {
+                        let curr = array[i]
+                        check.push(curr)
+                  }
+
+                  if(check.includes('"')) {
+                        return `please replace " with '`
+                  }
+                  // if no duplicate and no ""
                   data.push({ name, date, difficulty, code })
             }
 
