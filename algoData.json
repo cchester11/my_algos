@@ -3,36 +3,43 @@
     {
       "name": "palindromeChecker",
       "date": "06/24/2023",
+      "difficulty": "easy",
       "code": "function palindromeChecker (word) {\n  let reference = ''\n  for(let i = word.length - 1; i >= 0; i --) {\n    reference += word[i]\n  }\n  \n  if(word === reference) {\n    return true\n  }\n  \n  return false\n}\n\nconsole.log(palindromeChecker('level'))"
     },
     {
       "name": "sumOfDigits",
       "date": "06/24/2023",
+      "difficulty": "easy",
       "code": "function sumOfDigits(numbers) {\n  let stringify = numbers.toString();\n  let sum = 0;\n  \n  for (let i = 0; i < stringify.length; i++) {\n    let curr = parseInt(stringify[i], 10);\n    sum += curr;\n  }\n  \n  return sum;\n}\n\nconsole.log(sumOfDigits(4282)); // Output: 16"
     },
     {
       "name": "reverse string",
       "date": "06/24/2023",
+      "difficulty": "easy",
       "code": "function reversal () {\n  let hello = 'hello'\n  let algo = 'algorithm'\n  let algo_rev = ''\n  let hello_rev = ''\n\n  for(let i = hello.length - 1; i >= 0; i --) {\n    hello_rev += hello[i]\n  }\n  for(let i = algo.length - 1; i >= 0; i --) {\n    algo_rev += algo[i]\n  }\n\n  return [hello_rev, algo_rev]\n}\n\nconsole.log(reversal())"
     },
     {
       "name": "findMaxNumber",
       "date": "06/26/2023",
+      "difficulty": "easy",
       "code": "let test1 = [5, 2, 9, 1, 7]\nlet test2 = [10, 6, 3, 8, 4]\nlet test3 = [-1, -5, -3, -2, -4]\n\nfunction findMaxNumber (array) {\n  let maxNum = 0 \n  \n  for(let i = 0; i < array.length; i ++) {\n    let curr = array[i]\n    \n    if(curr > maxNum) {\n      maxNum = curr\n    }\n  }\n  \n  return maxNum\n}\n\nconsole.log(findMaxNumber(test1), findMaxNumber(test2), findMaxNumber(test3))"
     },
     {
       "name": "findMean",
       "date": "06/26/2023",
+      "difficulty": "easy",
       "code": "let test1 = [2,6,7,8,4,3,2,1,85]\n\nfunction findMean (array) {\n  let mean;\n  let total = 0; \n  let sum = 0;\n  \n  for(let i = 0; i < array.length; i ++) {\n    sum += array[i]\n    total += 1\n  }\n  \n  mean = sum/total\n  \n  return mean;\n}\n\nconsole.log(findMean(test1))"
     },
     {
       "name": "findMinNum",
       "date": "06/27/2023",
+      "difficulty": "easy",
       "code": "let test1 = [2,6,7,8,4,3,2,1,85]\n\nfunction findMinNum (array) {\n  let minNum = array[0];\n  \n  for(let i = 0;  i < array.length; i ++) {\n    let curr = array[i]\n    let prev = array[i  - 1]\n    \n    if(prev === undefined) {\n      continue;\n    } else if(curr < prev) {\n      minNum = curr\n    } else {\n      continue;\n    }\n  }  \n\n  return minNum\n}\n\nconsole.log(findMinNum(test1))"
     },
     {
       "name": "findVowels",
       "date": "06/27/2023",
+      "difficulty": "easy",
       "code": "let test1 = 'Hello World';\nlet test2 = 'Javascript';\n\nfunction findVowels(string) {\n  let amount = 0;\n  let vowels = ['a', 'e', 'i', 'o', 'u'];\n  let array = string.split('');\n\n  for (let i = 0; i < array.length; i++) {\n    let curr = array[i];\n\n    if (vowels.includes(curr)) {\n      amount++;\n    }\n  }\n\n  return amount;\n}\n\nconsole.log(findVowels(test1), findVowels(test2));"
     }
   ]

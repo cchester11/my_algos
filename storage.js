@@ -4,7 +4,7 @@ const path = require('path')
 
 // store function
 // accepts algo name, date, and code
-function storeAlgorithm(name, date, code) {
+function storeAlgorithm(name, date, difficulty, code) {
       // resolve the path between this utility and the pwd
       const filePath = path.resolve(process.cwd(), 'algoData.json')
       console.log('Your file path: '  + filePath)
@@ -32,7 +32,7 @@ function storeAlgorithm(name, date, code) {
                   return 'Found a matching name property in the database. Please provide a unique name for your algorithm'
             } else {
                   // if no duplicate
-                  data.push({ name, date, code })
+                  data.push({ name, date, difficulty, code })
             }
 
             // stringify for shipment to json file
@@ -51,11 +51,12 @@ function storeAlgorithm(name, date, code) {
 // to be accepted as function params
 const algoName = process.argv[2]
 const algoDate = process.argv[3]
-const algoCode = process.argv[4]
+const algoDiff = process.argv[4]
+const algoCode = process.argv[5]
 
 // error checking
-if (algoName && algoDate && algoCode) {
-      storeAlgorithm(algoName, algoDate, algoCode)
+if (algoName && algoDate && algoDiff && algoCode) {
+      storeAlgorithm(algoName, algoDate, algoDiff, algoCode)
 } else {
       console.log(__dirname)
       console.log('Please provide the name under which you like to the algorithm to be stored, the date, and the code itself--in that order.')
