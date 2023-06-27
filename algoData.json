@@ -24,6 +24,16 @@
       "name": "findMean",
       "date": "06/26/2023",
       "code": "let test1 = [2,6,7,8,4,3,2,1,85]\n\nfunction findMean (array) {\n  let mean;\n  let total = 0; \n  let sum = 0;\n  \n  for(let i = 0; i < array.length; i ++) {\n    sum += array[i]\n    total += 1\n  }\n  \n  mean = sum/total\n  \n  return mean;\n}\n\nconsole.log(findMean(test1))"
+    },
+    {
+      "name": "findMinNum",
+      "date": "06/27/2023",
+      "code": "let test1 = [2,6,7,8,4,3,2,1,85]\n\nfunction findMinNum (array) {\n  let minNum = array[0];\n  \n  for(let i = 0;  i < array.length; i ++) {\n    let curr = array[i]\n    let prev = array[i  - 1]\n    \n    if(prev === undefined) {\n      continue;\n    } else if(curr < prev) {\n      minNum = curr\n    } else {\n      continue;\n    }\n  }  \n\n  return minNum\n}\n\nconsole.log(findMinNum(test1))"
+    },
+    {
+      "name": "findVowels",
+      "date": "06/27/2023",
+      "code": "let test1 = 'Hello World';\nlet test2 = 'Javascript';\n\nfunction findVowels(string) {\n  let amount = 0;\n  let vowels = ['a', 'e', 'i', 'o', 'u'];\n  let array = string.split('');\n\n  for (let i = 0; i < array.length; i++) {\n    let curr = array[i];\n\n    if (vowels.includes(curr)) {\n      amount++;\n    }\n  }\n\n  return amount;\n}\n\nconsole.log(findVowels(test1), findVowels(test2));"
     }
   ]
 }
