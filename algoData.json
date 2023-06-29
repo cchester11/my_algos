@@ -47,6 +47,12 @@
       "date": "06/27/2023",
       "difficulty": "medium",
       "code": "const test1 ='hOW aRE yOU?'\nconst test2 = 'javascript is awesome'\n\nfunction toSentence (param) {\n  let array = param.split('')\n  let sentence = []\n  for(let i = 0; i < array.length; i ++) {\n     let curr = array[i]\n     \n     if(curr === array[0]) {\n       let item = curr.toUpperCase()\n        sentence.push(item)\n     } else {\n       let item = curr.toLowerCase()\n       sentence.push(item)\n     }\n  }\n  \n  sentence = sentence.join('')\n  \n  return sentence\n}\n\nconsole.log(toSentence(test1), toSentence(test2))"
+    },
+    {
+      "name": "calculateFactorial",
+      "date": "06/29/2023",
+      "difficulty": "easy",
+      "code": "function calculateFactorial (num) {\n  let factorial = 1;\n  \n  for(let i = num; i >= 1; i --) {\n    factorial = factorial * i\n  }\n  \n  return factorial\n}\n\nconsole.log(calculateFactorial(7))"
     }
   ]
 }
