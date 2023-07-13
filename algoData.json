@@ -59,6 +59,12 @@
       "date": "07/01/2023",
       "difficulty": "easy",
       "code": "let test1 = 'Hi my name is Charles'\n\nfunction reverseString (string) {\n  let reversedString = []\n  let parsedString = string.split(' ')\n  \n  for(let i = parsedString.length - 1; i >= 0; i --) {\n    console.log(parsedString[i])\n    \n    reversedString.push(parsedString[i])\n  }\n  \n  reversedString = reversedString.join(' ')\n  \n  return reversedString\n}\n\nconsole.log(reverseString(test1))"
+    },
+    {
+      "name": "findMissingNumber",
+      "date": "07/13/2023",
+      "difficulty": "medium",
+      "code": "function sortArray(array) {\n  for (let i = 0; i < array.length; i++) {\n    for (let j = i + 1; j < array.length; j++) {\n      if (array[i] > array[j]) {\n        let temp = array[i];\n        array[i] = array[j];\n        array[j] = temp;\n      }\n    }\n  }\n\n  return array;\n}\n\n\nfunction findMissingNumber (array) {\n  let missing; \n  \n  sortArray(array)\n \n  for(let i = 0; i < array.length - 1; i ++) {\n    let curr = array[i]\n    let next = array[i + 1]\n    \n    if(next - curr !== 1) {\n      missing = curr + 1\n      break;\n    }\n  }\n  \n  return missing\n}\n\nfindMissingNumber([1,3,2,7,6,5,4,9,8,11])"
     }
   ]
 }
