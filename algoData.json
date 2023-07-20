@@ -13,7 +13,7 @@
       "code": "function sumOfDigits(numbers) {\n  let stringify = numbers.toString();\n  let sum = 0;\n  \n  for (let i = 0; i < stringify.length; i++) {\n    let curr = parseInt(stringify[i], 10);\n    sum += curr;\n  }\n  \n  return sum;\n}\n\nconsole.log(sumOfDigits(4282)); // Output: 16"
     },
     {
-      "name": "reverse string",
+      "name": "reverseString",
       "date": "06/24/2023",
       "difficulty": "easy",
       "code": "function reversal () {\n  let hello = 'hello'\n  let algo = 'algorithm'\n  let algo_rev = ''\n  let hello_rev = ''\n\n  for(let i = hello.length - 1; i >= 0; i --) {\n    hello_rev += hello[i]\n  }\n  for(let i = algo.length - 1; i >= 0; i --) {\n    algo_rev += algo[i]\n  }\n\n  return [hello_rev, algo_rev]\n}\n\nconsole.log(reversal())"
