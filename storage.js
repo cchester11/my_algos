@@ -1,6 +1,7 @@
 // dependencies
 const fs = require('fs')
 const path = require('path')
+const checkName = require('./utilities/checkName.js')
 
 // store function
 // accepts algo name, date, and code
@@ -42,9 +43,12 @@ function storeAlgorithm(name, date, difficulty, code) {
                   if(check.includes('"')) {
                         return `please replace any " characters with '`
                   }
-                  // if no duplicate and no ""
-                  data.push({ name, date, difficulty, code })
             }
+
+            name = checkName(name)
+            
+            // if no duplicate and no ""
+            data.push({ name, date, difficulty, code })
 
             // stringify for shipment to json file
             const dataToJSON = JSON.stringify(storage, null, 2)
