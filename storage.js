@@ -40,7 +40,7 @@ function storeAlgorithm(name, date, difficulty, code) {
                   }
 
                   if(check.includes('"')) {
-                        return `please replace " with '`
+                        return `please replace any " characters with '`
                   }
                   // if no duplicate and no ""
                   data.push({ name, date, difficulty, code })
