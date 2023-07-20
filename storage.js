@@ -46,7 +46,12 @@ function storeAlgorithm(name, date, difficulty, code) {
             }
 
             name = checkName(name)
-            
+
+            if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(date)) {
+                  console.log("Error. Please use mm/dd/yyyy format for the date parameter")
+                  return
+            }
+
             // if no duplicate and no ""
             data.push({ name, date, difficulty, code })
 
