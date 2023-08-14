@@ -1,14 +1,14 @@
 // dependencies
 const fs = require('fs')
 const path = require('path')
-const checkName = require('./utilities/checkName.js')
+const checkName = require('../utilities/checkName')
 
 // store function
 // accepts algo name, date, and code
 function storeAlgorithm(name, date, difficulty, code) {
       // resolve the path between this utility and the pwd
-      const filePath = path.resolve(process.cwd(), 'algoData.json')
-      console.log('Your file path: '  + filePath)
+      const filePath = path.join(__dirname, '../json/algoData.json')
+      console.log('Patht to algorithm storage json file: '  + filePath)
 
       // check for errors in path
       if (path.isAbsolute(filePath)) {
@@ -59,7 +59,7 @@ function storeAlgorithm(name, date, difficulty, code) {
             const dataToJSON = JSON.stringify(storage, null, 2)
 
             // fs method for writing to json file
-            fs.writeFile('./algoData.json', dataToJSON, () => {
+            fs.writeFile(filePath, dataToJSON, () => {
                   console.log('Algorithm(s) saved to storage file') 
             })
       } else {
