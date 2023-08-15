@@ -83,6 +83,12 @@
       "date": "08/15/2023",
       "difficulty": "medium",
       "code": "function findMissingNumber(array) {\n  // set variable to house missing number\n  let missing;\n\n  // for loop to sort array\n  for (let i = 0; i < array.length; ) {\n    if (array[i] > array[i + 1]) {\n      let a = array[i];\n      array[i] = array[i + 1];\n      array[i + 1] = a;\n      i--;\n    } else {\n      i++;\n    }\n  }\n  \n  console.log(array)\n\n  // for loop to check for missing number\n  for(let i = 0; i < array.length; i ++) {\n    let curr = array[i]\n    let next = array[i + 1]\n    \n    console.log({\n      round: i,\n      curr: curr,\n      next: next\n    })\n    \n    if(next !== curr + 1) {\n      missing = curr + 1\n      \n      return missing;\n    }\n  }\n  \n  // return missing number\n  return 'No missing number';\n}\n\nfindMissingNumber([1, 4, 6, 3, 8, 9, 2, 10]);\n"
+    },
+    {
+      "name": "sortArray",
+      "date": "08/15/2023",
+      "difficulty": "medium",
+      "code": "function sortArray(array) {\n  // for loop to sort array\n  for (let i = 0; i < array.length; ) {\n    if (array[i] > array[i + 1]) {\n      let a = array[i];\n      array[i] = array[i + 1];\n      array[i + 1] = a;\n      i--;\n    } else {\n      i++;\n    }\n  }\n  \n  return array\n};\n\nsortArray([1,5,7,9,3,2,10,14])\n"
     }
   ]
 }
