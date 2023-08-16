@@ -89,6 +89,18 @@
       "date": "08/15/2023",
       "difficulty": "medium",
       "code": "function sortArray(array) {\n  // for loop to sort array\n  for (let i = 0; i < array.length; ) {\n    if (array[i] > array[i + 1]) {\n      let a = array[i];\n      array[i] = array[i + 1];\n      array[i + 1] = a;\n      i--;\n    } else {\n      i++;\n    }\n  }\n  \n  return array\n};\n\nsortArray([1,5,7,9,3,2,10,14])\n"
+    },
+    {
+      "name": "simpleSpreadOperatorProblem",
+      "date": "08/16/2023",
+      "difficulty": "easy",
+      "code": "function mergeArrays(a, b) {\n  return [...a, ...b]\n}\n\nconsole.log(mergeArrays([4,5,6,3], [491,728,2,3]))\n"
+    },
+    {
+      "name": "joinArrayAddElement",
+      "date": "08/16/2023",
+      "difficulty": "easy",
+      "code": "function copyAndAddElement(array, element) {\n  if(array.length <= 1) {\n    console.log('length equal to 1')\n    return [array, element]\n  }\n  return [...array, element]\n}\n\nconsole.log(copyAndAddElement([33], 4))\nconsole.log(copyAndAddElement([14,938,733], 'new element'))"
     }
   ]
 }

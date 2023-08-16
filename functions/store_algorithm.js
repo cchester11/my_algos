@@ -8,7 +8,7 @@ const checkName = require('../utilities/checkName')
 function storeAlgorithm(name, date, difficulty, code) {
       // resolve the path between this utility and the pwd
       const filePath = path.join(__dirname, '../json/algoData.json')
-      console.log('Patht to algorithm storage json file: '  + filePath)
+      console.log('Path to algorithm storage json file: '  + filePath)
 
       // check for errors in path
       if (path.isAbsolute(filePath)) {
