@@ -41,7 +41,7 @@ function storeAlgorithm(name, date, difficulty, code) {
                   }
 
                   if(check.includes('"')) {
-                        return `please replace any " characters with '`
+                        throw new Error(`Please use ' characters in the place of " characters`)
                   }
             }
 
