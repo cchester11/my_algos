@@ -101,6 +101,18 @@
       "date": "08/16/2023",
       "difficulty": "easy",
       "code": "function copyAndAddElement(array, element) {\n  if(array.length <= 1) {\n    console.log('length equal to 1')\n    return [array, element]\n  }\n  return [...array, element]\n}\n\nconsole.log(copyAndAddElement([33], 4))\nconsole.log(copyAndAddElement([14,938,733], 'new element'))"
+    },
+    {
+      "name": "findCommonKeys",
+      "date": "08/22/2023",
+      "difficulty": "medium",
+      "code": "let places = {\n  '7': 'SanAntonio',\n  '5': 'Houston',\n  '4': 'Atlanta'\n}\n\nlet people = {\n  '5': 'Tony',\n  '4': 'Bill',\n  '7': 'Sarah'\n}\n\nfunction findCommonKeys (obj1, obj2) {\n    let commonKeys = []\n    \n    // loop through each key of obj1\n    for(const key in obj1) {\n      if(obj2.hasOwnProperty(key)) {\n        commonKeys.push(key)\n      }\n    }\n  \n  return commonKeys\n}\n\nfunction combineTwoObjects (obj1, obj2) {\n    commonKeys = findCommonKeys(obj1, obj2)  \n    \n    const combinedObject = {}\n    commonKeys.forEach(key => {\n      combinedObject[key] = obj1[key] + ' ' + obj2[key]\n      delete obj1[key]\n      delete obj2[key]\n    })\n  \n    return {...obj1, ...combinedObject, ...obj2}\n}\n\nconsole.log(combineTwoObjects(places, people))"
+    },
+    {
+      "name": "findCommonCities",
+      "date": "08/21/2023",
+      "difficulty": "medium",
+      "code": "let Cities = {\n  'SanAntonio': [],\n  'Houston': [],\n  'Austin': [],\n  'Dallas': [],\n  'Lubbock': []\n}\n\nlet People = {\n  'Kyle': 'San Antonio',\n  'Sam': 'Dallas',\n  'Charles': 'Austin',\n  'Jimmy': 'Lubbock',\n  'Stephanie': 'Houston',\n  'Otis': 'Houston',\n  'Aleya': 'Austin',\n}\n\nfunction FindCommonCities(cities, people) {\n  Object.entries(people).forEach(([property, value]) => {\n    if(cities[value]) {\n      cities[value].push(property)\n    }\n  })\n  \n  return cities\n}\n\nFindCommonCities(Cities, People)"
     }
   ]
 }
