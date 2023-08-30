@@ -113,6 +113,12 @@
       "date": "08/21/2023",
       "difficulty": "medium",
       "code": "let Cities = {\n  'SanAntonio': [],\n  'Houston': [],\n  'Austin': [],\n  'Dallas': [],\n  'Lubbock': []\n}\n\nlet People = {\n  'Kyle': 'San Antonio',\n  'Sam': 'Dallas',\n  'Charles': 'Austin',\n  'Jimmy': 'Lubbock',\n  'Stephanie': 'Houston',\n  'Otis': 'Houston',\n  'Aleya': 'Austin',\n}\n\nfunction FindCommonCities(cities, people) {\n  Object.entries(people).forEach(([property, value]) => {\n    if(cities[value]) {\n      cities[value].push(property)\n    }\n  })\n  \n  return cities\n}\n\nFindCommonCities(Cities, People)"
+    },
+    {
+      "name": "filterLongWords",
+      "date": "08/30/2023",
+      "difficulty": "easy",
+      "code": "const words = ['apple', 'banana', 'grape', 'strawberry', 'melon', 'character'];\nconst minLength = 6;\n\nfunction filterLongWords (array, amount) {\n  let longOnes = []\n  \n  for(let i = 0; i < array.length; i ++) {\n     if(array[i].length > amount) {\n        longOnes.push(array[i])\n     }\n  }\n  \n  return longOnes\n}\n\nconst longWords = filterLongWords(words, minLength);\nconsole.log(longWords); // Output: ['banana', 'strawberry']"
     }
   ]
 }
