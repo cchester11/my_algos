@@ -125,6 +125,12 @@
       "date": "10/14/2023",
       "difficulty": "medium",
       "code": "function intToRom (number) {\n  const romNums = {\n    'M': 1000,\n    'CM': 900,\n    'D': 500,\n    'CD': 400,\n    'C': 100,\n    'XC': 90,\n    'L': 50,\n    'XL': 40,\n    'X': 10,\n    'IX': 9,\n    'V': 5,\n    'IV': 4,\n    'I': 1\n  }\n  \n  let result = ''\n  \n  for (const key in romNums) {\n    while(number >= romNums[key]) {\n      result += key\n      number -= romNums[key]\n    }\n  }\n  \n  return result\n}\n\nconsole.log(intToRom(78))"
+    },
+    {
+      "name": "romanToInt",
+      "date": "10/17/2023",
+      "difficulty": "hard",
+      "code": "function romToInt(numeral) {\n  const numerals = {\n    M: 1000,\n    CM: 900,\n    D: 500,\n    CD: 400,\n    C: 100,\n    XC: 90,\n    L: 50,\n    XL: 40,\n    X: 10,\n    IX: 9,\n    V: 5,\n    IV: 4,\n    I: 1\n  }\n\n  // set result and i to 0\n  \n  // result will accumulate the interpreted number translation\n  let result = 0;\n  // i will help us match the numerals to our number values for translation \n  let i = 0;\n\n  // until we've matched each roman numeral,  the loop will continue\n  while (i < numeral.length) {\n    if (i + 1 < numeral.length && numerals[numeral[i] + numeral[i + 1]]) {\n      result += numerals[numeral[i] + numeral[i + 1]];\n      i += 2;\n    } else {\n      result += numerals[numeral[i]];\n      i++;\n    }\n  }\n\n  return result;\n}\n\nconsole.log(romToInt('MMMMMMDCCLXXXIII'));"
     }
   ]
 }
