@@ -1,6 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import write_all_to_lib from "../utilities/write_to_lib";
+const fs = require('fs');
+const path = require('path');
+const write_to_lib = require('../utilities/write_to_lib')
 
 // access data from algoData.json
 // parse the data
