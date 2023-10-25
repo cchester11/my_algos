@@ -10,7 +10,7 @@ const write_to_lib = require('../utilities/write_to_lib')
 // call the write_to_lib function and place in both as parameters
 
 function store_lib () {
-      const data = path.join(__dirname, '../json/algoData.json')
+      const dataPath = path.join(__dirname, '../json/algoData.json')
 
       return data
 }
