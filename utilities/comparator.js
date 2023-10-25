@@ -1,3 +1,6 @@
+/**
+ * Library.
+ */
 class Comparator {
       /**
        * Constructor.
