@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const checkName = require('../utilities/checkName');
+const { checkName, checkPath } = require('../utilities/index');
 
 /**
  * Use command line to store a json object in the algoData.json file.
