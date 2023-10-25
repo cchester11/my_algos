@@ -131,6 +131,12 @@
       "date": "10/17/2023",
       "difficulty": "hard",
       "code": "function romToInt(numeral) {\n  const numerals = {\n    M: 1000,\n    CM: 900,\n    D: 500,\n    CD: 400,\n    C: 100,\n    XC: 90,\n    L: 50,\n    XL: 40,\n    X: 10,\n    IX: 9,\n    V: 5,\n    IV: 4,\n    I: 1\n  }\n\n  // set result and i to 0\n  \n  // result will accumulate the interpreted number translation\n  let result = 0;\n  // i will help us match the numerals to our number values for translation \n  let i = 0;\n\n  // until we've matched each roman numeral,  the loop will continue\n  while (i < numeral.length) {\n    if (i + 1 < numeral.length && numerals[numeral[i] + numeral[i + 1]]) {\n      result += numerals[numeral[i] + numeral[i + 1]];\n      i += 2;\n    } else {\n      result += numerals[numeral[i]];\n      i++;\n    }\n  }\n\n  return result;\n}\n\nconsole.log(romToInt('MMMMMMDCCLXXXIII'));"
+    },
+    {
+      "name": "fibonacci",
+      "date": "10/25/2023",
+      "difficulty": "medium",
+      "code": "function fib (n) {\n  // declare our array that will house the sequence\n  let sequence = [1]\n  // declare our curr and pre values used to create the sequencee\n  let curr = 1\n  let pre = 0\n  // conditional statement to return 1 if the n parameter is 1\n  if(n === 1) {\n    return sequence\n  }\n  // declare our counter that will count down from our number to zero\n   let counter = n - 1\n  // a while loop whose condition is counter\n  // if our condition is (counter) than while counter is above zero our while loop will stay true and continue running\n  while(counter) {\n  // define new number for sequence by adding pre to curr\n    curr += pre\n  // reassign preval by subtracting pre from curr\n     pre = curr - pre\n  // add curr to our sequence array\n     sequence.push(curr)\n  // update the counter\n    counter -= 1\n  }\n  // finally return the sequence array\n  \n  return sequence\n}\n\nconsole.log(fib(90))"
     }
   ]
 }

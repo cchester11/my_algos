@@ -79,5 +79,5 @@ if (algoName && algoDate && algoDiff && algoCode) {
       storeAlgorithm(algoName, algoDate, algoDiff, algoCode)
 } else {
       console.log(__dirname)
-      console.log('Please provide the name under which you like to the algorithm to be stored, the date, and the code itself--in that order.')
+      console.log('Please provide the name under which you like to the algorithm to be stored, the date, the difficulty (easy, medium, or hard), and the code itself--in that order.')
 }
