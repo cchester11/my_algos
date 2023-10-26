@@ -24,9 +24,7 @@ function storeAlgorithm(name, date, difficulty, code) {
 
       console.log(checkPath(filePath))
 
-      if ((checkPath(filePath)) === "Incohesive file path.") {
-            throw new Error("Incohesive file path.")
-      } else if ((checkPath(filePath)) === "no exist sync") {
+      if ((checkPath(filePath)) === "no exist sync") {
             storage = {
                   algorithm_storage: []
             }
@@ -34,7 +32,7 @@ function storeAlgorithm(name, date, difficulty, code) {
             const contents = fs.readFileSync(filePath, 'utf8')
             storage = JSON.parse(contents)
       } else {
-            return checkPath(filePath)
+            checkPath(filePath)
       }
 
       // variable representing the new json entry
