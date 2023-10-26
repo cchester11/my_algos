@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { checkName, checkPath } = require('../utilities/index');
+const { checkName, checkPath, checkDuplicate } = require('../utilities/index');
 
 /**
  * Use command line to store a json object in the algoData.json file.
@@ -13,6 +13,7 @@ const { checkName, checkPath } = require('../utilities/index');
 function storeAlgorithm(name, date, difficulty, code) {
       // resolve the path between this utility and the pwd
       const filePath = path.join(__dirname, '../json/algoData.json')
+      
       console.log('Path to algorithm storage json file: ' + filePath)
 
       let storage;
@@ -35,24 +36,10 @@ function storeAlgorithm(name, date, difficulty, code) {
       // variable representing the new json entry
       let data = storage.algorithm_storage;
 
-      // prevent duplicate entry
-      let check = data.find(item => item.name === name)
-      if (check) {
-            return 'Found a matching name property in the database. Please provide a unique name for your algorithm'
-      } else {
-            let check = []
-            let array = code.split('')
+      // prevent duplicate entry and "" characters
+      checkDuplicate(name, code, data)
 
-            for (let i = 0; i < array.length; i++) {
-                  let curr = array[i]
-                  check.push(curr)
-            }
-
-            if (check.includes('"')) {
-                  throw new Error(`Please use ' characters in the place of " characters`)
-            }
-      }
-
+      // alter the name property to abide by naming standards
       name = checkName(name)
 
       if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(date)) {
