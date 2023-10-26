@@ -19,7 +19,7 @@ function checkPath (xPath) {
             }
       }
 
-      return "Incohesive file path."
+      throw new Error("Incohesive file path.")
 }
 
 module.exports = checkPath;
