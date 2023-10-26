@@ -1,18 +1,22 @@
 const fs = require('fs');
 const path = require('path');
-const write_to_lib = require('../utilities/write_to_lib')
+const checkPath = require('../utilities/checkPath');
+const write_to_lib = require('../utilities/write_to_lib');
 
-// access data from algoData.json
-// parse the data
-// go through each algorithm object
-// grab the name property
-// grab the code property and parse it
-// call the write_to_lib function and place in both as parameters
+function store_lib() {
+      const dataPath = path.join(__dirname, '../json/algoData.json');
 
-function store_lib () {
-      const dataPath = path.join(__dirname, '../json/algoData.json')
+      let data;
 
-      return data
+      if (checkPath(dataPath) === 'no exist sync') {
+            throw new Error('The json file provided is empty. There is no data to parse.');
+      }
+
+      const contents = fs.readFileSync(dataPath, 'utf8');
+      data = JSON.parse(contents); // Parse JSON data
+
+      console.log(data); // Log the parsed data
+
+      // Now you can process the data as needed
+      // Call other functions like write_to_lib here
 }
-
-module.exports = store_lib;
