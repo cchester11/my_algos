@@ -5,6 +5,7 @@ const write_to_lib = require('../utilities/write_to_lib');
 
 function store_lib() {
       const dataPath = path.join(__dirname, '../json/algoData.json');
+      const libPath = path.join(__dirname, '../lib/');
 
       let data;
       let names = []
@@ -30,11 +31,16 @@ function store_lib() {
             throw new Error('names and codes arrays do not equal in length')
       }
 
+      const fileNames = fs.readdirSync(libPath)
+
       for(let i = 0; i < names.length; i ++) {
             let name = names[i]
             let code = codes[i]
-
-            write_to_lib(name, code)
+            if(fileNames.includes(names[i])) {
+                  continue
+            } else {
+                  write_to_lib(name, code)
+            }
       }
 
       return
