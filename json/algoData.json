@@ -137,6 +137,12 @@
       "date": "10/25/2023",
       "difficulty": "medium",
       "code": "function fib (n) {\n  // declare our array that will house the sequence\n  let sequence = [1]\n  // declare our curr and pre values used to create the sequencee\n  let curr = 1\n  let pre = 0\n  // conditional statement to return 1 if the n parameter is 1\n  if(n === 1) {\n    return sequence\n  }\n  // declare our counter that will count down from our number to zero\n   let counter = n - 1\n  // a while loop whose condition is counter\n  // if our condition is (counter) than while counter is above zero our while loop will stay true and continue running\n  while(counter) {\n  // define new number for sequence by adding pre to curr\n    curr += pre\n  // reassign preval by subtracting pre from curr\n     pre = curr - pre\n  // add curr to our sequence array\n     sequence.push(curr)\n  // update the counter\n    counter -= 1\n  }\n  // finally return the sequence array\n  \n  return sequence\n}\n\nconsole.log(fib(90))"
+    },
+    {
+      "name": "cartesian_product",
+      "date": "10/27/2023",
+      "difficulty": "easy",
+      "code": "function cartesian_product (setA, setB) {\n  if(!setA || !setB || !setA.length || !setB.length) {\n    return null\n  }\n  \n  const product = []\n  \n  // will loop through the next idxA of setA each iteration\n  // will loop through all indexes of setB through each iteration\n  for(let idxA = 0; idxA < setA.length; idxA ++) {\n    for(let idxB = 0; idxB < setB.length; idxB ++) {\n      product.push(setA[idxA], setB[idxB])\n    }\n  }\n  \n  return product\n}\n\nconsole.log(cartesian_product([1,2,3], [a, b, c, d, e]))"
     }
   ]
 }
