@@ -31,8 +31,8 @@ function store_lib() {
             throw new Error('names and codes arrays do not equal in length')
       }
 
-      const fileNames = fs.readdirSync(libPath)
-
+      const fileNames = fs.readdirSync(libPath).map(fileName => path.basename(fileName, '.js'))
+      console.log(fileNames)
       for(let i = 0; i < names.length; i ++) {
             let name = names[i]
             let code = codes[i]
