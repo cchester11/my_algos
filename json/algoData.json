@@ -143,6 +143,12 @@
       "date": "10/27/2023",
       "difficulty": "easy",
       "code": "function cartesian_product (setA, setB) {\n  if(!setA || !setB || !setA.length || !setB.length) {\n    return null\n  }\n  \n  const product = []\n  \n  // will loop through the next idxA of setA each iteration\n  // will loop through all indexes of setB through each iteration\n  for(let idxA = 0; idxA < setA.length; idxA ++) {\n    for(let idxB = 0; idxB < setB.length; idxB ++) {\n      product.push(setA[idxA], setB[idxB])\n    }\n  }\n  \n  return product\n}\n\nconsole.log(cartesian_product([1,2,3], [a, b, c, d, e]))"
+    },
+    {
+      "name": "fisherYates",
+      "date": "10/28/2023",
+      "difficulty": "medium",
+      "code": "/**\n * return a random set of numbers\n * @param {*[]} originalArray\n * @return {*[]}\n */\nfunction fisherYates (array) {\n  // use the slice method to create a copy of our array\n  let clone = array.slice(0);\n  \n  // for visual reference regarding the use of the slice method\n  console.log({clone: clone});\n  \n  // loop through the clone array going backwards\n  for(let i = (clone.length - 1); i > 0; i --) {\n    // grab a random index from the clone array\n    const randomIdx = Math.floor(Math.random() * (i + 1));\n    // swap the current index of clone with the randomly chosen one\n    [clone[i], clone[randomIdx]] = [clone[randomIdx], clone[i]];\n  } \n  // return our clone\n  return clone;\n}\n\nconsole.log(fisherYates([1,45,3,78,324,577,33,2,4,656]))"
     }
   ]
 }

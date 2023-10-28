@@ -14,7 +14,7 @@ try {
             storeAlgorithm(algoName, algoDate, algoDiff, algoCode)
       } else {
             console.log(__dirname)
-            throw new Error('Please provide the name under which you like to the algorithm to be stored, the date, the difficulty (easy, medium, or hard), and the code itself--in that order.')
+            throw new Error('This function accepts 4 arguments.\n Please provide the name under which you like to the algorithm to be stored, the date, the difficulty (easy, medium, or hard), and the code itself--in that order.')
       }
 } catch (err) {
       if(err) {
