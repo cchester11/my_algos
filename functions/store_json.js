@@ -1,5 +1,5 @@
 // dependencies
-const storeAlgorithm = require('../utilities/store_algorithm');
+const storeAlgorithm = require('./store_algorithm');
 
 // command line args
 // to be accepted as function params

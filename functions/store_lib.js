@@ -32,7 +32,7 @@ function store_lib() {
       }
 
       const fileNames = fs.readdirSync(libPath).map(fileName => path.basename(fileName, '.js'))
-      console.log(fileNames)
+
       for(let i = 0; i < names.length; i ++) {
             let name = names[i]
             let code = codes[i]
