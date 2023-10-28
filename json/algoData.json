@@ -154,7 +154,7 @@
       "name": "hammingDistance",
       "date": "10/28/2023",
       "difficulty": "easy",
-      "code": "/**\n * @param {string} a\n * @param {string} b\n * return {number}\n*/\nfunction hammingDistance (a, b) {\n  // error check for inconsistent lengths\n  if(a.length !== b.length) {\n    throw new Error(Strings"
+      "code": "/**\n * @param {string} a\n * @param {string} b\n * return {number}\n*/\nfunction hammingDistance (a, b) {\n  // error check for inconsistent lengths\n  if(a.length !== b.length) {\n    throw new Error('Strings must be of same length');\n  }\n  \n  // initiate our distance variable\n  let distance = 0\n  \n  // loop through a or b to and calculate the hammingDistance\n  for(let i = 0; i < a.length; i ++) {\n    if(a[i] !== b[i]) {\n      distance ++\n    }\n  }\n  \n  // return distance\n  return distance\n}\n\nconsole.log(hammingDistance('goliatihing', 'goliantiers'))"
     }
   ]
 }
