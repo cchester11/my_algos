@@ -1,6 +1,8 @@
 const Comparator = require('../utilities/comparator');
 const sortArray  = require('../lib/sortArray');
 
+let testPassed = false;
+
 /**
  * Binary search implementation.
  * @param {*[]} array
@@ -55,5 +57,13 @@ function binarySearch (array, seekEl, comparatorCallBack) {
 
 // run jest test manually
 test('Binary search implementation', () => {
-      expect(binarySearch([1,5,7,33,53,98,27,84,37,16], 16, comparatorCallBack)).toBe(16)
+      const result = binarySearch([1,5,7,33,53,98,27,84,37,16], 16, comparatorCallBack);
+
+      if(result === 16) {
+            testPassed = true
+      };
+
+      expect(result).toBe(16);
 });
+
+console.log(testPassed);
