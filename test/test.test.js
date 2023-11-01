@@ -49,6 +49,9 @@ function binarySearch (array, seekEl, comparator) {
 };
 
 // give description string a value
-description = '';
+description = 'Binary search implementation';
 
 // run jest test manually
+test(description, () => {
+      expect(binarySearch([1,5,7,33,53,98,27,84,37,16], 16, comparator)).toBe(16)
+});
