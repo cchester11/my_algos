@@ -1,3 +1,4 @@
+import {expect, jest, test, afterAll} from '@jest/globals';
 const Comparator = require('../utilities/comparator');
 const sortArray  = require('../lib/sortArray');
 
@@ -57,13 +58,13 @@ function binarySearch (array, seekEl, comparatorCallBack) {
 
 // run jest test manually
 test('Binary search implementation', () => {
-      const result = binarySearch([1,5,7,33,53,98,27,84,37,16], 16, comparatorCallBack);
+      const result = binarySearch([1,5,7,33,53,98,27,84,37,15], 15, comparatorCallBack);
 
-      if(result === 16) {
+      if(result === 15) {
             testPassed = true
       };
 
-      expect(result).toBe(16);
+      expect(result).toBe(15);
 });
 
 afterAll(() => {
