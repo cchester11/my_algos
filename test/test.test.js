@@ -66,4 +66,9 @@ test('Binary search implementation', () => {
       expect(result).toBe(16);
 });
 
-console.log(testPassed);
+afterAll(() => {
+      if(testPassed) {
+            console.log('test passed')
+            // somehow extract the name of the function (binarySearch in this case), extract the function itself, and subsequently place them in respective variables
+      }
+});
