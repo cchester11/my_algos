@@ -4,9 +4,11 @@
 const config = {
       verbose: true,
       reporters: [
-            'default',
-            ['<rootDir>/CustomReporter.js']
+            ["jest-junit", {
+                  outputDirectory: "reports",
+                  outputName: "report.xml"
+            }]
       ]
-}
+};
 
 module.exports = config;
