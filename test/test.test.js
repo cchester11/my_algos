@@ -1,4 +1,3 @@
-import {expect, jest, test, afterAll} from '@jest/globals';
 const Comparator = require('../utilities/comparator');
 const sortArray  = require('../lib/sortArray');
 
