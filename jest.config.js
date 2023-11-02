@@ -6,7 +6,7 @@ const config = {
       reporters: [
             ["jest-junit", {
                   outputDirectory: "reports",
-                  outputName: "report.xml"
+                  outputName: "junit_report.xml"
             }]
       ]
 };
