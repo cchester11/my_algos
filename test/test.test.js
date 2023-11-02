@@ -1,15 +1,10 @@
+// leave this dependency line. Do not Delete
+const inquirer = require('inquirer');
+
 const Comparator = require('../utilities/comparator');
 const sortArray  = require('../lib/sortArray');
 
 let testPassed = false;
-
-/**
- * Binary search implementation.
- * @param {*[]} array
- * @param {*} seekEl
- * @param {function(a, b)} [comparatorCallBack]
- * @return {number}
- */
 
 const comparatorCallBack = function (a, b) {
       if (a === b) {
@@ -19,7 +14,16 @@ const comparatorCallBack = function (a, b) {
       return a < b ? -1 : 1;
 }
 
+/**
+ * Binary search implementation.
+ * @param {*[]} array
+ * @param {*} seekEl
+ * @param {function(a, b)} [comparatorCallBack]
+ * @return {number}
+ */
 function binarySearch (array, seekEl, comparatorCallBack) {
+      // requires Comparator and sortArray functions/classes
+
       // sort the array
       const sortedArray = sortArray(array);
 
@@ -68,7 +72,43 @@ test('Binary search implementation', () => {
 
 afterAll(() => {
       if(testPassed) {
-            console.log('test passed')
-            // somehow extract the name of the function (binarySearch in this case), extract the function itself, and subsequently place them in respective variables
+            inquirer
+            .prompt([
+                  {
+                        type: "input",
+                        name: "fileName",
+                        message: "Please provide a file name for this function. The same name that you used to title the function  is recommended."
+                  },
+                  {
+                        type: "input",
+                        name: "functionBlock",
+                        message: "Copy and paste the function block into the prompt."
+                  },
+                  {
+                        type: "list",
+                        name: "difficulty",
+                        message: "What difficulty level would you rate this algorithm under?",
+                        choices: [
+                              "Easy",
+                              "Medium",
+                              "Hard"
+                        ],
+                        filter(val) {
+                              return val.toLowerCase()
+                        }
+                  }
+            ])
+            .then((answers) => {
+                  answers.forEach((answer) => {
+                        console.log(answer)
+                  })
+            })
+            .catch(error => {
+                  if(error.isTtyError) {
+                        throw new Error("Prompt couldn't be rendered in the current environment")
+                  } else {
+                        throw new Error("Error: " + error)
+                  }
+            })
       }
 });
