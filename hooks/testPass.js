@@ -7,7 +7,6 @@ const inquirer = require('inquirer');
  */
 function testPass(result) {
       if (result) {
-            return new Promise(function (resolve, reject) {
                   inquirer.prompt([
                         {
                               type: "input",
@@ -35,18 +34,16 @@ function testPass(result) {
                   ])
                         .then(answers => {
                               console.log(answers);
-                              resolve();
                         })
                         .catch((err) => {
                               if (err.isTtyError) {
-                                    reject(new Error("Prompt couldn't be rendered in the current environment"));
+                                    throw new Error("Prompt couldn't be rendered in the current environment");
                               } else {
-                                    reject(new Error("Error: " + err));
+                                    throw new Error("Error: " + err);
                               }
                         });
-            })
       } else {
-            reject( new new Error("Test failed. testPass hook returning error."));
+            throw new Error("Test failed. testPass hook returning error.");
       }
 };
 

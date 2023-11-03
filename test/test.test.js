@@ -2,7 +2,16 @@ const Comparator = require('../utilities/comparator');
 const sortArray = require('../lib/sortArray');
 const testPass = require('../hooks/testPass');
 
-let testPassed = false;
+let testPassed = true;
+
+afterAll(async () => {
+      await testPass(testPassed)
+      // // explicit exit call
+      // if (global) {
+      //       const globalAny = global;
+      //       globalAny.jestCircus.event.complete();
+      // }
+}, 15000)
 
 const comparatorCallBack = function (a, b) {
       if (a === b) {
@@ -58,19 +67,12 @@ function binarySearch(array, seekEl, comparatorCallBack) {
 };
 
 // run jest test manually
-test('Binary search implementation', async function() {
+test('Binary search implementation', function() {
       const result = binarySearch([1, 5, 7, 33, 53, 98, 27, 84, 37, 15], 15, comparatorCallBack);
 
-      if (result === 15) {
-            testPassed = true
+      if (result !== 15) {
+            testPassed = false
       };
 
       expect(result).toBe(15);
-
-      return new Promise((resolve) => {
-            // The inquirer prompt should be finished before resolving the promise.
-            testPass(testPassed).then(() => {
-                  resolve();
-            });
-      });
 });
