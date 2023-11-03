@@ -3,11 +3,12 @@ const inquirer = require('inquirer');
 /**
  * The result param should be true or false. The function will execute an inquirer prompt.
  * @param {boolean} result 
+ * @return {Promise}
  */
-async function testPass (result) {
+function testPass(result) {
       if (result) {
-            await inquirer
-                  .prompt([
+            return new Promise(function (resolve, reject) {
+                  inquirer.prompt([
                         {
                               type: "input",
                               name: "fileName",
@@ -32,20 +33,20 @@ async function testPass (result) {
                               }
                         }
                   ])
-                  .then((answers) => {
-                        answers.forEach((answer) => {
-                              console.log(answer)
+                        .then(answers => {
+                              console.log(answers);
+                              resolve();
                         })
-                  })
-                  .catch(error => {
-                        if (error.isTtyError) {
-                              throw new Error("Prompt couldn't be rendered in the current environment")
-                        } else {
-                              throw new Error("Error: " + error)
-                        }
-                  })
+                        .catch((err) => {
+                              if (err.isTtyError) {
+                                    reject(new Error("Prompt couldn't be rendered in the current environment"));
+                              } else {
+                                    reject(new Error("Error: " + err));
+                              }
+                        });
+            })
       } else {
-            throw new Error("Test failed. testPass hook returning error.")
+            reject( new new Error("Test failed. testPass hook returning error."));
       }
 };
 

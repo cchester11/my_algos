@@ -1,12 +1,8 @@
 const Comparator = require('../utilities/comparator');
-const sortArray  = require('../lib/sortArray');
+const sortArray = require('../lib/sortArray');
 const testPass = require('../hooks/testPass');
 
 let testPassed = false;
-
-afterAll(() => {
-      testPass(testPassed)
-})
 
 const comparatorCallBack = function (a, b) {
       if (a === b) {
@@ -23,7 +19,7 @@ const comparatorCallBack = function (a, b) {
  * @param {function(a, b)} [comparatorCallBack]
  * @return {number}
  */
-function binarySearch (array, seekEl, comparatorCallBack) {
+function binarySearch(array, seekEl, comparatorCallBack) {
       // requires Comparator and sortArray functions/classes
 
       // sort the array
@@ -37,20 +33,20 @@ function binarySearch (array, seekEl, comparatorCallBack) {
       let endIdx = array.length - 1;
 
       // write for loop used in search process
-      while(startIdx <= endIdx) {
+      while (startIdx <= endIdx) {
             // each loop through calculate the new middle index
             const middleIdx = startIdx + Math.floor((endIdx - startIdx) / 2);
 
             // return the seekEl if found
-            if(comparator.equal(sortedArray[middleIdx], seekEl)) {
+            if (comparator.equal(sortedArray[middleIdx], seekEl)) {
                   return sortedArray[middleIdx];
             };
 
             // seek on left or right side according to below condition
             // thus "chopping the sort area in half"
-            if(comparator.lessThan(sortedArray[middleIdx], seekEl)) {
+            if (comparator.lessThan(sortedArray[middleIdx], seekEl)) {
                   // right
-                  startIdx = middleIdx +  1
+                  startIdx = middleIdx + 1
             } else {
                   // left
                   endIdx = middleIdx - 1
@@ -62,12 +58,19 @@ function binarySearch (array, seekEl, comparatorCallBack) {
 };
 
 // run jest test manually
-test('Binary search implementation', () => {
-      const result = binarySearch([1,5,7,33,53,98,27,84,37,15], 15, comparatorCallBack);
+test('Binary search implementation', async function() {
+      const result = binarySearch([1, 5, 7, 33, 53, 98, 27, 84, 37, 15], 15, comparatorCallBack);
 
-      if(result === 15) {
+      if (result === 15) {
             testPassed = true
       };
 
       expect(result).toBe(15);
+
+      return new Promise((resolve) => {
+            // The inquirer prompt should be finished before resolving the promise.
+            testPass(testPassed).then(() => {
+                  resolve();
+            });
+      });
 });

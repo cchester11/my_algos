@@ -8,7 +8,8 @@ const config = {
                   outputDirectory: "reports",
                   outputName: "junit_report.xml"
             }]
-      ]
+      ],
+      testTimeout: 15000
 };
 
 module.exports = config;
