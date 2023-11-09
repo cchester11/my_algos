@@ -18,6 +18,7 @@ class Comparator {
        * @returns {number}
        */
       static defaultCompareFunction(a, b) {
+            // return 0 or true or false
             if (a === b) {
                   return 0;
             }
