@@ -14,9 +14,10 @@ const jumpSearch = function (array, seekElement, comparatorCallBack = function(a
 }) {
       // set up initial variables
       const sortedArray = sortArray(array);
+      const arrayLength = sortedArray.length;
       const comparator = new Comparator(comparatorCallBack);
-      const arrayLength = array.length;
 
+      // if no array length return false
       if(!arrayLength) {
             return -1
       }
@@ -36,25 +37,27 @@ const jumpSearch = function (array, seekElement, comparatorCallBack = function(a
 
             // if we move beyond the scope of the array return false
             if(blockStartIdx > arrayLength) {
-                  return - 1
+                  return -1
             }
       }
 
+      // determine currIdx for below while block
       let currIdx = blockStartIdx;
 
       // once we've found the seekElement within a block we search that block linearly
       while(currIdx < Math.min(blockEndIdx, arrayLength)) {
-            if(seekElement === sortedArray[currIdx]) {
+            if(sortedArray[currIdx] === seekElement) {
                   return seekElement
             }
 
-            currIdx ++
+            currIdx ++;
       }
 
-      return  -1
+      // return -1 if nothing
+      return -1
 };
 
-console.log(jumpSearch([4,78,98,23,12,34,72,81,96], 96, comparatorCallBack = function(a, b) {
+console.log(jumpSearch([4,78,98,23,12,34,72,81,96], 72, comparatorCallBack = function(a, b) {
       if(a  === b) { 
             return 0
       } return a < b ? 1 : -1;
