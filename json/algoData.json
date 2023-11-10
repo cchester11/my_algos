@@ -155,6 +155,12 @@
       "date": "10/28/2023",
       "difficulty": "easy",
       "code": "/**\n * @param {string} a\n * @param {string} b\n * return {number}\n*/\nfunction hammingDistance (a, b) {\n  // error check for inconsistent lengths\n  if(a.length !== b.length) {\n    throw new Error('Strings must be of same length');\n  }\n  \n  // initiate our distance variable\n  let distance = 0\n  \n  // loop through a or b to and calculate the hammingDistance\n  for(let i = 0; i < a.length; i ++) {\n    if(a[i] !== b[i]) {\n      distance ++\n    }\n  }\n  \n  // return distance\n  return distance\n}\n\nconsole.log(hammingDistance('goliatihing', 'goliantiers'))"
+    },
+    {
+      "name": "jumpSearch",
+      "date": "11/09/2023",
+      "difficulty": "hard",
+      "code": "const Comparator = require(`../utilities/comparator`);\nconst sortArray = require(`../lib/sortArray`);\n\n/**\n * Jump (block) search\n * @param {*[]} array\n * @param {*} seekElement\n * @param {function(a, b)} [comparatorCallBack]\n */\nconst jumpSearch = function (array, seekElement, comparatorCallBack = function(a, b) {\n      if(a  === b) { \n            return 0\n      } return a < b ? 1 : -1;\n}) {\n      const sortedArray = sortArray(array);\n      const comparator = new Comparator(comparatorCallBack);\n      const arrayLength = sortedArray.length;\n\n      if(!arrayLength) {\n            console.log(`no length to array`)\n            return -1\n      }\n\n      const jumpSize = Math.floor(Math.sqrt(arrayLength));\n\n      let blockStartIdx = 0;\n      let blockEndIdx = jumpSize;\n\n      while(seekElement > sortedArray[Math.min(blockEndIdx, arrayLength)]) {\n            blockStartIdx = blockEndIdx;\n            blockEndIdx += jumpSize;\n\n            if(blockStartIdx > arrayLength) {\n                  console.log(`surpassed array length during the search`)\n                  return -1\n            }\n      }\n\n      let currIdx = blockStartIdx;\n\n      while(currIdx < Math.min(blockEndIdx, arrayLength)) {\n            if(seekElement === sortedArray[currIdx]) {\n                  return sortedArray[currIdx]\n            }\n\n            currIdx += 1\n      }\n\n      return -1\n};\n\nconsole.log(jumpSearch([4,78,98,23,12,34,72,81,96], 96, comparatorCallBack = function(a, b) {\n      if(a  === b) { \n            return 0\n      } return a < b ? 1 : -1;\n}));"
     }
   ]
 }
