@@ -62,3 +62,11 @@ console.log(jumpSearch([4,78,98,23,12,34,72,81,96], 72, comparatorCallBack = fun
             return 0
       } return a < b ? 1 : -1;
 }));
+
+test('jump search implementation', () => {
+      expect(jumpSearch([4,78,98,23,12,34,72,81,96], 72, comparatorCallBack = function(a, b) {
+            if(a  === b) { 
+                  return 0
+            } return a < b ? 1 : -1;
+      })).toBe(72);
+});

@@ -4,14 +4,14 @@ const testPass = require('../hooks/testPass');
 
 let testPassed = true;
 
-afterAll(async () => {
-      await testPass(testPassed)
-      // // explicit exit call
+// afterAll(async () => {
+      // await testPass(testPassed)
+      // explicit exit call
       // if (global) {
       //       const globalAny = global;
       //       globalAny.jestCircus.event.complete();
       // }
-}, 15000)
+// }, 15000)
 
 const comparatorCallBack = function (a, b) {
       if (a === b) {
