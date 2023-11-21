@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" errors="0" time="2.172">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-11-21T15:52:37" time="1.399" tests="1">
-    <testcase classname=" Binary search implementation" name=" Binary search implementation" time="0.006">
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="1.329">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-11-21T17:10:23" time="0.739" tests="1">
+    <testcase classname=" generat a fib sequence" name=" generat a fib sequence" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-11-21T17:10:23" time="0.76" tests="1">
+    <testcase classname=" jump search implementation" name=" jump search implementation" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-11-21T17:10:23" time="1.067" tests="1">
+    <testcase classname=" Binary search implementation" name=" Binary search implementation" time="0.005">
     </testcase>
   </testsuite>
 </testsuites>
