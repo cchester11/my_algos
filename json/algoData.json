@@ -167,6 +167,12 @@
       "date": "11/21/2023",
       "difficulty": "easy",
       "code": "function generateFibSequence(n) {\n      // if n is less than 0, equal to 1, or equal to 2 return [], [0], or [0, 1]\n      if(n <= 0) {\n            return []\n      } else if(n === 1) {\n            return [0]\n      } else if(n === 2) {\n            return [0, 1]\n      }\n\n      // use Array constructor to create an array with (n) indexes and fill method to fill all with null\n      const sequence = Array(n).fill(null);\n\n      // initiate first two numbers of the sequence array\n      sequence[0] = 0;\n      sequence[1] = 1;\n\n      // for loop to generate the sequence\n      for(let i = 2; i < n; i ++) {\n            sequence[i] = sequence[i - 1] + sequence[i - 2]\n      }\n\n      // return the sequence\n      return sequence;\n};\n\nconsole.log(generateFibSequence(50));"
+    },
+    {
+      "name": "binarySearch",
+      "date": "01/04/2024",
+      "difficulty": "medium",
+      "code": "/**\n * Binary search implementation.\n * @param {*[]} array\n * @param {*} seekEl\n * @param {function(a, b)} [comparatorCallBack]\n * @return {number}\n */\nfunction binarySearch(array, seekEl, comparatorCallBack) {\n      // requires Comparator and sortArray functions/classes\n\n      // sort the array\n      const sortedArray = sortArray(array);\n\n      // initiate the comparator function \n      let comparator = new Comparator(comparatorCallBack)\n\n      // declare start and end index for the search process\n      let startIdx = 0;\n      let endIdx = array.length - 1;\n\n      // write for loop used in search process\n      while (startIdx <= endIdx) {\n            // each loop through calculate the new middle index\n            const middleIdx = startIdx + Math.floor((endIdx - startIdx) / 2);\n\n            // return the seekEl if found\n            if (comparator.equal(sortedArray[middleIdx], seekEl)) {\n                  return sortedArray[middleIdx];\n            };\n\n            // seek on left or right side according to below condition\n            // thus 'chopping the sort area in half'\n            if (comparator.lessThan(sortedArray[middleIdx], seekEl)) {\n                  // right\n                  startIdx = middleIdx + 1\n            } else {\n                  // left\n                  endIdx = middleIdx - 1\n            }\n      };\n\n      // return -1 (false) if not found\n      return -1;\n};"
     }
   ]
 }
