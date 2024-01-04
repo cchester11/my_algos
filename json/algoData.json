@@ -173,6 +173,12 @@
       "date": "01/04/2024",
       "difficulty": "medium",
       "code": "/**\n * Binary search implementation.\n * @param {*[]} array\n * @param {*} seekEl\n * @param {function(a, b)} [comparatorCallBack]\n * @return {number}\n */\nfunction binarySearch(array, seekEl, comparatorCallBack) {\n      // requires Comparator and sortArray functions/classes\n\n      // sort the array\n      const sortedArray = sortArray(array);\n\n      // initiate the comparator function \n      let comparator = new Comparator(comparatorCallBack)\n\n      // declare start and end index for the search process\n      let startIdx = 0;\n      let endIdx = array.length - 1;\n\n      // write for loop used in search process\n      while (startIdx <= endIdx) {\n            // each loop through calculate the new middle index\n            const middleIdx = startIdx + Math.floor((endIdx - startIdx) / 2);\n\n            // return the seekEl if found\n            if (comparator.equal(sortedArray[middleIdx], seekEl)) {\n                  return sortedArray[middleIdx];\n            };\n\n            // seek on left or right side according to below condition\n            // thus 'chopping the sort area in half'\n            if (comparator.lessThan(sortedArray[middleIdx], seekEl)) {\n                  // right\n                  startIdx = middleIdx + 1\n            } else {\n                  // left\n                  endIdx = middleIdx - 1\n            }\n      };\n\n      // return -1 (false) if not found\n      return -1;\n};"
+    },
+    {
+      "name": "levenshteinDistance",
+      "date": "01/04/2024",
+      "difficulty": "medium",
+      "code": "function levenshteinDistance (a, b) {\n      // create an array equal in length to the length of b + 1 and fill with null values\n      // then map through each index and fill that index with a subarray equal in length to a + 1 and fill with null values\n      const fillB = Array(b.length + 1).fill(null);\n      const distanceMatrix = fillB.map(() => {\n            return Array(a.length + 1).fill(null)\n      })\n\n      return distanceMatrix;\n};\n\nconsole.log(levenshteinDistance('homosapien', 'ape'));"
     }
   ]
 }
