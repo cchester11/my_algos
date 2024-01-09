@@ -185,6 +185,12 @@
       "date": "01/04/2024",
       "difficulty": "hard",
       "code": "function mergeIntervals (intervals) {\n      // return intervals array if theres only one interval item\n      if(intervals.length <= 1) {\n            return intervals;\n      };\n\n      // sort each interval item\n      // for ex: index 2 is [3, 1] so the sort function would change it to [1, 3]\n      intervals.sort((a, b) => {\n            a[0] - b[0]\n      });\n\n      // this is where we will store our interval sets\n      // we start with intervals zero but will amend it in the for loop below if need be\n      let mergedIntervals = [intervals[0]];\n      \n      //our for loop\n      // start at index 1 of intervals because we've already placed 0 in the merged array\n      // set currInt and lastMerged\n      // condition which will execute if a change marker is identified\n      // else merge currInt\n      for(let i = 1; i < intervals.length; i ++) {\n            let currInt = intervals[i]\n            let lastMergedInt = mergedIntervals[mergedIntervals.length - 1]\n\n            if(currInt[0] <= lastMergedInt[1]) {\n                  lastMergedInt[1] = Math.max(lastMergedInt[1], currInt[1]) \n            } else {\n                  mergedIntervals.push(currInt)\n            }\n      };\n\n      return mergedIntervals\n};"
+    },
+    {
+      "name": "anagramGroups",
+      "date": "01/09/2024",
+      "difficulty": "medium",
+      "code": "const words = [eat, tea, tan, ate, nat, bat];\n\n//reduce words to groups of anagrams\nconst anagramGroups = words.reduce((acc, word) => {\n  // strip each word to its a-z sort\n  const key = [...word].sort().join()\n  // initialize an array in the acc object with value of array or acc[key] which will be the returned data from last iteration\n  acc[key] = acc[key] || []\n  // push word to its array in the acc object\n  acc[key].push(word)\n  // return acc to update state\n  return acc\n}, {})\n\nconsole.log(anagramGroups)"
     }
   ]
 }
