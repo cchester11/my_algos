@@ -191,6 +191,12 @@
       "date": "01/09/2024",
       "difficulty": "medium",
       "code": "const words = [eat, tea, tan, ate, nat, bat];\n\n//reduce words to groups of anagrams\nconst anagramGroups = words.reduce((acc, word) => {\n  // strip each word to its a-z sort\n  const key = [...word].sort().join()\n  // initialize an array in the acc object with value of array or acc[key] which will be the returned data from last iteration\n  acc[key] = acc[key] || []\n  // push word to its array in the acc object\n  acc[key].push(word)\n  // return acc to update state\n  return acc\n}, {})\n\nconsole.log(anagramGroups)"
+    },
+    {
+      "name": "countDuplicates",
+      "date": "01/31/2024",
+      "difficulty": "medium",
+      "code": "function countDuplicates(arr) {\n  let sorted = [...arr].sort((a, b) => a - b)\n  \n  const duplicates = sorted.reduce((acc, number) => {\n    if(acc[number]) {\n      acc[number] ++\n    } else {\n      acc[number] = 1\n    }\n    \n    return acc\n  }, {})\n  \n  let results = {}\n  \n  for(let key in duplicates) {\n    if(duplicates[key] > 1) {\n      results[key] = duplicates[key]\n    }\n  }\n  \n  return results\n}\n\nconst inputArray = [1, 2, 3, 2, 4, 5, 1, 6, 7, 8, 7, 9, 10, 11, 10, 1];\nconsole.log(countDuplicates(inputArray));"
     }
   ]
 }
