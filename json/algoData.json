@@ -1,202 +1,202 @@
 {
-  "algorithm_storage": [
-    {
-      "name": "palindromeChecker",
-      "date": "06/24/2023",
-      "difficulty": "easy",
-      "code": "function palindromeChecker (word) {\n  let reference = ''\n  for(let i = word.length - 1; i >= 0; i --) {\n    reference += word[i]\n  }\n  \n  if(word === reference) {\n    return true\n  }\n  \n  return false\n}\n\nconsole.log(palindromeChecker('level'))"
-    },
-    {
-      "name": "sumOfDigits",
-      "date": "06/24/2023",
-      "difficulty": "easy",
-      "code": "function sumOfDigits(numbers) {\n  let stringify = numbers.toString();\n  let sum = 0;\n  \n  for (let i = 0; i < stringify.length; i++) {\n    let curr = parseInt(stringify[i], 10);\n    sum += curr;\n  }\n  \n  return sum;\n}\n\nconsole.log(sumOfDigits(4282)); // Output: 16"
-    },
-    {
-      "name": "reverseString",
-      "date": "06/24/2023",
-      "difficulty": "easy",
-      "code": "function reversal () {\n  let hello = 'hello'\n  let algo = 'algorithm'\n  let algo_rev = ''\n  let hello_rev = ''\n\n  for(let i = hello.length - 1; i >= 0; i --) {\n    hello_rev += hello[i]\n  }\n  for(let i = algo.length - 1; i >= 0; i --) {\n    algo_rev += algo[i]\n  }\n\n  return [hello_rev, algo_rev]\n}\n\nconsole.log(reversal())"
-    },
-    {
-      "name": "findMaxNumber",
-      "date": "06/26/2023",
-      "difficulty": "easy",
-      "code": "let test1 = [5, 2, 9, 1, 7]\nlet test2 = [10, 6, 3, 8, 4]\nlet test3 = [-1, -5, -3, -2, -4]\n\nfunction findMaxNumber (array) {\n  let maxNum = 0 \n  \n  for(let i = 0; i < array.length; i ++) {\n    let curr = array[i]\n    \n    if(curr > maxNum) {\n      maxNum = curr\n    }\n  }\n  \n  return maxNum\n}\n\nconsole.log(findMaxNumber(test1), findMaxNumber(test2), findMaxNumber(test3))"
-    },
-    {
-      "name": "findMean",
-      "date": "06/26/2023",
-      "difficulty": "easy",
-      "code": "let test1 = [2,6,7,8,4,3,2,1,85]\n\nfunction findMean (array) {\n  let mean;\n  let total = 0; \n  let sum = 0;\n  \n  for(let i = 0; i < array.length; i ++) {\n    sum += array[i]\n    total += 1\n  }\n  \n  mean = sum/total\n  \n  return mean;\n}\n\nconsole.log(findMean(test1))"
-    },
-    {
-      "name": "findMinNum",
-      "date": "06/27/2023",
-      "difficulty": "easy",
-      "code": "let test1 = [2,6,7,8,4,3,2,1,85]\n\nfunction findMinNum (array) {\n  let minNum = array[0];\n  \n  for(let i = 0;  i < array.length; i ++) {\n    let curr = array[i]\n    let prev = array[i  - 1]\n    \n    if(prev === undefined) {\n      continue;\n    } else if(curr < prev) {\n      minNum = curr\n    } else {\n      continue;\n    }\n  }  \n\n  return minNum\n}\n\nconsole.log(findMinNum(test1))"
-    },
-    {
-      "name": "findVowels",
-      "date": "06/27/2023",
-      "difficulty": "easy",
-      "code": "let test1 = 'Hello World';\nlet test2 = 'Javascript';\n\nfunction findVowels(string) {\n  let amount = 0;\n  let vowels = ['a', 'e', 'i', 'o', 'u'];\n  let array = string.split('');\n\n  for (let i = 0; i < array.length; i++) {\n    let curr = array[i];\n\n    if (vowels.includes(curr)) {\n      amount++;\n    }\n  }\n\n  return amount;\n}\n\nconsole.log(findVowels(test1), findVowels(test2));"
-    },
-    {
-      "name": "cleanSentence",
-      "date": "06/27/2023",
-      "difficulty": "medium",
-      "code": "const test1 ='hOW aRE yOU?'\nconst test2 = 'javascript is awesome'\n\nfunction toSentence (param) {\n  let array = param.split('')\n  let sentence = []\n  for(let i = 0; i < array.length; i ++) {\n     let curr = array[i]\n     \n     if(curr === array[0]) {\n       let item = curr.toUpperCase()\n        sentence.push(item)\n     } else {\n       let item = curr.toLowerCase()\n       sentence.push(item)\n     }\n  }\n  \n  sentence = sentence.join('')\n  \n  return sentence\n}\n\nconsole.log(toSentence(test1), toSentence(test2))"
-    },
-    {
-      "name": "calculateFactorial",
-      "date": "06/29/2023",
-      "difficulty": "easy",
-      "code": "function calculateFactorial (num) {\n  let factorial = 1;\n  \n  for(let i = num; i >= 1; i --) {\n    factorial = factorial * i\n  }\n  \n  return factorial\n}\n\nconsole.log(calculateFactorial(7))"
-    },
-    {
-      "name": "reverseString",
-      "date": "07/01/2023",
-      "difficulty": "easy",
-      "code": "let test1 = 'Hi my name is Charles'\n\nfunction reverseString (string) {\n  let reversedString = []\n  let parsedString = string.split(' ')\n  \n  for(let i = parsedString.length - 1; i >= 0; i --) {\n    console.log(parsedString[i])\n    \n    reversedString.push(parsedString[i])\n  }\n  \n  reversedString = reversedString.join(' ')\n  \n  return reversedString\n}\n\nconsole.log(reverseString(test1))"
-    },
-    {
-      "name": "findMissingNumber",
-      "date": "07/13/2023",
-      "difficulty": "medium",
-      "code": "function sortArray(array) {\n  for (let i = 0; i < array.length; i++) {\n    for (let j = i + 1; j < array.length; j++) {\n      if (array[i] > array[j]) {\n        let temp = array[i];\n        array[i] = array[j];\n        array[j] = temp;\n      }\n    }\n  }\n\n  return array;\n}\n\n\nfunction findMissingNumber (array) {\n  let missing; \n  \n  sortArray(array)\n \n  for(let i = 0; i < array.length - 1; i ++) {\n    let curr = array[i]\n    let next = array[i + 1]\n    \n    if(next - curr !== 1) {\n      missing = curr + 1\n      break;\n    }\n  }\n  \n  return missing\n}\n\nfindMissingNumber([1,3,2,7,6,5,4,9,8,11])"
-    },
-    {
-      "name": "isAnagram",
-      "date": "07/15/2023",
-      "difficulty": "medium",
-      "code": "function isAnagram (x, y) {\n  let a = x.replace(/[0-9]/g, '')\n  let b = y.replace(/[0-9]/g, '')\n  a = a.toLowerCase()\n  b = b.toLowerCase()\n  \n  if(a.length !== b.length) {\n    return 'is not anagram'\n  }\n  \n  let arrB = b.split('')\n  \n  for(let i = 0; i < a.length; i ++) {\n    let curr = a[i]\n    let idxB = arrB.indexOf(curr)\n    \n    if(idxB === -1) {\n      return 'is not anagram'\n    }\n    \n    arrB.splice(idxB, 1)\n  }\n  \n  return 'is anagram'\n}\n\nisAnagram('silen9T', 'liSten0')"
-    },
-    {
-      "name": "isValidSubsequence",
-      "date": "07/19",
-      "difficulty": "Medium",
-      "code": "function isValidSubsequence(array, sequence) {\n  let check = [];\n\n  if (array.length < sequence.length) {\n    return {\n      result: false,\n      message: 'sequence length is great than array length',\n    };\n  }\n\n  for (let i = 0; i < sequence.length; i++) {\n    let curr = sequence[i];\n    let indxOfA = array.indexOf(curr);\n\n    if (indxOfA === -1) {\n      return {\n        result: false,\n        message:\n          'An integer from the sequence array did not appear in the reference array',\n      };\n    }\n\n    check.push(indxOfA);\n  }\n\n  for (let i = 0; i < check.length - 1; i++) {\n    let curr = check[i];\n    let next = check[i + 1];\n\n    if (next !== curr + 1) {\n      return {\n        result: false,\n        message:\n          'The subsequence contained integers from the array but not in a sequential order referenced in the array',\n      };\n    }\n  }\n  \n  return {\n    result: true }"
-    },
-    {
-      "name": "findMissingNumber-1",
-      "date": "08/15/2023",
-      "difficulty": "medium",
-      "code": "function findMissingNumber(array) {\n  // set variable to house missing number\n  let missing;\n\n  // for loop to sort array\n  for (let i = 0; i < array.length; ) {\n    if (array[i] > array[i + 1]) {\n      let a = array[i];\n      array[i] = array[i + 1];\n      array[i + 1] = a;\n      i--;\n    } else {\n      i++;\n    }\n  }\n  \n  console.log(array)\n\n  // for loop to check for missing number\n  for(let i = 0; i < array.length; i ++) {\n    let curr = array[i]\n    let next = array[i + 1]\n    \n    console.log({\n      round: i,\n      curr: curr,\n      next: next\n    })\n    \n    if(next !== curr + 1) {\n      missing = curr + 1\n      \n      return missing;\n    }\n  }\n  \n  // return missing number\n  return 'No missing number';\n}\n\nfindMissingNumber([1, 4, 6, 3, 8, 9, 2, 10]);\n"
-    },
-    {
-      "name": "sortArray",
-      "date": "08/15/2023",
-      "difficulty": "medium",
-      "code": "function sortArray(array) {\n  // for loop to sort array\n  for (let i = 0; i < array.length; ) {\n    if (array[i] > array[i + 1]) {\n      let a = array[i];\n      array[i] = array[i + 1];\n      array[i + 1] = a;\n      i--;\n    } else {\n      i++;\n    }\n  }\n  \n  return array\n};\n\nsortArray([1,5,7,9,3,2,10,14])\n"
-    },
-    {
-      "name": "simpleSpreadOperatorProblem",
-      "date": "08/16/2023",
-      "difficulty": "easy",
-      "code": "function mergeArrays(a, b) {\n  return [...a, ...b]\n}\n\nconsole.log(mergeArrays([4,5,6,3], [491,728,2,3]))\n"
-    },
-    {
-      "name": "joinArrayAddElement",
-      "date": "08/16/2023",
-      "difficulty": "easy",
-      "code": "function copyAndAddElement(array, element) {\n  if(array.length <= 1) {\n    console.log('length equal to 1')\n    return [array, element]\n  }\n  return [...array, element]\n}\n\nconsole.log(copyAndAddElement([33], 4))\nconsole.log(copyAndAddElement([14,938,733], 'new element'))"
-    },
-    {
-      "name": "findCommonKeys",
-      "date": "08/22/2023",
-      "difficulty": "medium",
-      "code": "let places = {\n  '7': 'SanAntonio',\n  '5': 'Houston',\n  '4': 'Atlanta'\n}\n\nlet people = {\n  '5': 'Tony',\n  '4': 'Bill',\n  '7': 'Sarah'\n}\n\nfunction findCommonKeys (obj1, obj2) {\n    let commonKeys = []\n    \n    // loop through each key of obj1\n    for(const key in obj1) {\n      if(obj2.hasOwnProperty(key)) {\n        commonKeys.push(key)\n      }\n    }\n  \n  return commonKeys\n}\n\nfunction combineTwoObjects (obj1, obj2) {\n    commonKeys = findCommonKeys(obj1, obj2)  \n    \n    const combinedObject = {}\n    commonKeys.forEach(key => {\n      combinedObject[key] = obj1[key] + ' ' + obj2[key]\n      delete obj1[key]\n      delete obj2[key]\n    })\n  \n    return {...obj1, ...combinedObject, ...obj2}\n}\n\nconsole.log(combineTwoObjects(places, people))"
-    },
-    {
-      "name": "findCommonCities",
-      "date": "08/21/2023",
-      "difficulty": "medium",
-      "code": "let Cities = {\n  'SanAntonio': [],\n  'Houston': [],\n  'Austin': [],\n  'Dallas': [],\n  'Lubbock': []\n}\n\nlet People = {\n  'Kyle': 'San Antonio',\n  'Sam': 'Dallas',\n  'Charles': 'Austin',\n  'Jimmy': 'Lubbock',\n  'Stephanie': 'Houston',\n  'Otis': 'Houston',\n  'Aleya': 'Austin',\n}\n\nfunction FindCommonCities(cities, people) {\n  Object.entries(people).forEach(([property, value]) => {\n    if(cities[value]) {\n      cities[value].push(property)\n    }\n  })\n  \n  return cities\n}\n\nFindCommonCities(Cities, People)"
-    },
-    {
-      "name": "filterLongWords",
-      "date": "08/30/2023",
-      "difficulty": "easy",
-      "code": "const words = ['apple', 'banana', 'grape', 'strawberry', 'melon', 'character'];\nconst minLength = 6;\n\nfunction filterLongWords (array, amount) {\n  let longOnes = []\n  \n  for(let i = 0; i < array.length; i ++) {\n     if(array[i].length > amount) {\n        longOnes.push(array[i])\n     }\n  }\n  \n  return longOnes\n}\n\nconst longWords = filterLongWords(words, minLength);\nconsole.log(longWords); // Output: ['banana', 'strawberry']"
-    },
-    {
-      "name": "int_to_roman",
-      "date": "10/14/2023",
-      "difficulty": "medium",
-      "code": "function intToRom (number) {\n  const romNums = {\n    'M': 1000,\n    'CM': 900,\n    'D': 500,\n    'CD': 400,\n    'C': 100,\n    'XC': 90,\n    'L': 50,\n    'XL': 40,\n    'X': 10,\n    'IX': 9,\n    'V': 5,\n    'IV': 4,\n    'I': 1\n  }\n  \n  let result = ''\n  \n  for (const key in romNums) {\n    while(number >= romNums[key]) {\n      result += key\n      number -= romNums[key]\n    }\n  }\n  \n  return result\n}\n\nconsole.log(intToRom(78))"
-    },
-    {
-      "name": "romanToInt",
-      "date": "10/17/2023",
-      "difficulty": "hard",
-      "code": "function romToInt(numeral) {\n  const numerals = {\n    M: 1000,\n    CM: 900,\n    D: 500,\n    CD: 400,\n    C: 100,\n    XC: 90,\n    L: 50,\n    XL: 40,\n    X: 10,\n    IX: 9,\n    V: 5,\n    IV: 4,\n    I: 1\n  }\n\n  // set result and i to 0\n  \n  // result will accumulate the interpreted number translation\n  let result = 0;\n  // i will help us match the numerals to our number values for translation \n  let i = 0;\n\n  // until we've matched each roman numeral,  the loop will continue\n  while (i < numeral.length) {\n    if (i + 1 < numeral.length && numerals[numeral[i] + numeral[i + 1]]) {\n      result += numerals[numeral[i] + numeral[i + 1]];\n      i += 2;\n    } else {\n      result += numerals[numeral[i]];\n      i++;\n    }\n  }\n\n  return result;\n}\n\nconsole.log(romToInt('MMMMMMDCCLXXXIII'));"
-    },
-    {
-      "name": "fibonacci",
-      "date": "10/25/2023",
-      "difficulty": "medium",
-      "code": "function fib (n) {\n  // declare our array that will house the sequence\n  let sequence = [1]\n  // declare our curr and pre values used to create the sequencee\n  let curr = 1\n  let pre = 0\n  // conditional statement to return 1 if the n parameter is 1\n  if(n === 1) {\n    return sequence\n  }\n  // declare our counter that will count down from our number to zero\n   let counter = n - 1\n  // a while loop whose condition is counter\n  // if our condition is (counter) than while counter is above zero our while loop will stay true and continue running\n  while(counter) {\n  // define new number for sequence by adding pre to curr\n    curr += pre\n  // reassign preval by subtracting pre from curr\n     pre = curr - pre\n  // add curr to our sequence array\n     sequence.push(curr)\n  // update the counter\n    counter -= 1\n  }\n  // finally return the sequence array\n  \n  return sequence\n}\n\nconsole.log(fib(90))"
-    },
-    {
-      "name": "cartesian_product",
-      "date": "10/27/2023",
-      "difficulty": "easy",
-      "code": "function cartesian_product (setA, setB) {\n  if(!setA || !setB || !setA.length || !setB.length) {\n    return null\n  }\n  \n  const product = []\n  \n  // will loop through the next idxA of setA each iteration\n  // will loop through all indexes of setB through each iteration\n  for(let idxA = 0; idxA < setA.length; idxA ++) {\n    for(let idxB = 0; idxB < setB.length; idxB ++) {\n      product.push(setA[idxA], setB[idxB])\n    }\n  }\n  \n  return product\n}\n\nconsole.log(cartesian_product([1,2,3], [a, b, c, d, e]))"
-    },
-    {
-      "name": "fisherYates",
-      "date": "10/28/2023",
-      "difficulty": "medium",
-      "code": "/**\n * return a random set of numbers\n * @param {*[]} originalArray\n * @return {*[]}\n */\nfunction fisherYates (array) {\n  // use the slice method to create a copy of our array\n  let clone = array.slice(0);\n  \n  // for visual reference regarding the use of the slice method\n  console.log({clone: clone});\n  \n  // loop through the clone array going backwards\n  for(let i = (clone.length - 1); i > 0; i --) {\n    // grab a random index from the clone array\n    const randomIdx = Math.floor(Math.random() * (i + 1));\n    // swap the current index of clone with the randomly chosen one\n    [clone[i], clone[randomIdx]] = [clone[randomIdx], clone[i]];\n  } \n  // return our clone\n  return clone;\n}\n\nconsole.log(fisherYates([1,45,3,78,324,577,33,2,4,656]))"
-    },
-    {
-      "name": "hammingDistance",
-      "date": "10/28/2023",
-      "difficulty": "easy",
-      "code": "/**\n * @param {string} a\n * @param {string} b\n * return {number}\n*/\nfunction hammingDistance (a, b) {\n  // error check for inconsistent lengths\n  if(a.length !== b.length) {\n    throw new Error('Strings must be of same length');\n  }\n  \n  // initiate our distance variable\n  let distance = 0\n  \n  // loop through a or b to and calculate the hammingDistance\n  for(let i = 0; i < a.length; i ++) {\n    if(a[i] !== b[i]) {\n      distance ++\n    }\n  }\n  \n  // return distance\n  return distance\n}\n\nconsole.log(hammingDistance('goliatihing', 'goliantiers'))"
-    },
-    {
-      "name": "jumpSearch",
-      "date": "11/09/2023",
-      "difficulty": "hard",
-      "code": "const Comparator = require(`../utilities/comparator`);\nconst sortArray = require(`../lib/sortArray`);\n\n/**\n * Jump (block) search\n * @param {*[]} array\n * @param {*} seekElement\n * @param {function(a, b)} [comparatorCallBack]\n */\nconst jumpSearch = function (array, seekElement, comparatorCallBack = function(a, b) {\n      if(a  === b) { \n            return 0\n      } return a < b ? 1 : -1;\n}) {\n      const sortedArray = sortArray(array);\n      const comparator = new Comparator(comparatorCallBack);\n      const arrayLength = sortedArray.length;\n\n      if(!arrayLength) {\n            console.log(`no length to array`)\n            return -1\n      }\n\n      const jumpSize = Math.floor(Math.sqrt(arrayLength));\n\n      let blockStartIdx = 0;\n      let blockEndIdx = jumpSize;\n\n      while(seekElement > sortedArray[Math.min(blockEndIdx, arrayLength)]) {\n            blockStartIdx = blockEndIdx;\n            blockEndIdx += jumpSize;\n\n            if(blockStartIdx > arrayLength) {\n                  console.log(`surpassed array length during the search`)\n                  return -1\n            }\n      }\n\n      let currIdx = blockStartIdx;\n\n      while(currIdx < Math.min(blockEndIdx, arrayLength)) {\n            if(seekElement === sortedArray[currIdx]) {\n                  return sortedArray[currIdx]\n            }\n\n            currIdx += 1\n      }\n\n      return -1\n};\n\nconsole.log(jumpSearch([4,78,98,23,12,34,72,81,96], 96, comparatorCallBack = function(a, b) {\n      if(a  === b) { \n            return 0\n      } return a < b ? 1 : -1;\n}));"
-    },
-    {
-      "name": "generateFibSequence",
-      "date": "11/21/2023",
-      "difficulty": "easy",
-      "code": "function generateFibSequence(n) {\n      // if n is less than 0, equal to 1, or equal to 2 return [], [0], or [0, 1]\n      if(n <= 0) {\n            return []\n      } else if(n === 1) {\n            return [0]\n      } else if(n === 2) {\n            return [0, 1]\n      }\n\n      // use Array constructor to create an array with (n) indexes and fill method to fill all with null\n      const sequence = Array(n).fill(null);\n\n      // initiate first two numbers of the sequence array\n      sequence[0] = 0;\n      sequence[1] = 1;\n\n      // for loop to generate the sequence\n      for(let i = 2; i < n; i ++) {\n            sequence[i] = sequence[i - 1] + sequence[i - 2]\n      }\n\n      // return the sequence\n      return sequence;\n};\n\nconsole.log(generateFibSequence(50));"
-    },
-    {
-      "name": "binarySearch",
-      "date": "01/04/2024",
-      "difficulty": "medium",
-      "code": "/**\n * Binary search implementation.\n * @param {*[]} array\n * @param {*} seekEl\n * @param {function(a, b)} [comparatorCallBack]\n * @return {number}\n */\nfunction binarySearch(array, seekEl, comparatorCallBack) {\n      // requires Comparator and sortArray functions/classes\n\n      // sort the array\n      const sortedArray = sortArray(array);\n\n      // initiate the comparator function \n      let comparator = new Comparator(comparatorCallBack)\n\n      // declare start and end index for the search process\n      let startIdx = 0;\n      let endIdx = array.length - 1;\n\n      // write for loop used in search process\n      while (startIdx <= endIdx) {\n            // each loop through calculate the new middle index\n            const middleIdx = startIdx + Math.floor((endIdx - startIdx) / 2);\n\n            // return the seekEl if found\n            if (comparator.equal(sortedArray[middleIdx], seekEl)) {\n                  return sortedArray[middleIdx];\n            };\n\n            // seek on left or right side according to below condition\n            // thus 'chopping the sort area in half'\n            if (comparator.lessThan(sortedArray[middleIdx], seekEl)) {\n                  // right\n                  startIdx = middleIdx + 1\n            } else {\n                  // left\n                  endIdx = middleIdx - 1\n            }\n      };\n\n      // return -1 (false) if not found\n      return -1;\n};"
-    },
-    {
-      "name": "levenshteinDistance",
-      "date": "01/04/2024",
-      "difficulty": "medium",
-      "code": "function levenshteinDistance (a, b) {\n      // create an array equal in length to the length of b + 1 and fill with null values\n      // then map through each index and fill that index with a subarray equal in length to a + 1 and fill with null values\n      const fillB = Array(b.length + 1).fill(null);\n      const distanceMatrix = fillB.map(() => {\n            return Array(a.length + 1).fill(null)\n      })\n\n      return distanceMatrix;\n};\n\nconsole.log(levenshteinDistance('homosapien', 'ape'));"
-    },
-    {
-      "name": "mergeIntervals",
-      "date": "01/04/2024",
-      "difficulty": "hard",
-      "code": "function mergeIntervals (intervals) {\n      // return intervals array if theres only one interval item\n      if(intervals.length <= 1) {\n            return intervals;\n      };\n\n      // sort each interval item\n      // for ex: index 2 is [3, 1] so the sort function would change it to [1, 3]\n      intervals.sort((a, b) => {\n            a[0] - b[0]\n      });\n\n      // this is where we will store our interval sets\n      // we start with intervals zero but will amend it in the for loop below if need be\n      let mergedIntervals = [intervals[0]];\n      \n      //our for loop\n      // start at index 1 of intervals because we've already placed 0 in the merged array\n      // set currInt and lastMerged\n      // condition which will execute if a change marker is identified\n      // else merge currInt\n      for(let i = 1; i < intervals.length; i ++) {\n            let currInt = intervals[i]\n            let lastMergedInt = mergedIntervals[mergedIntervals.length - 1]\n\n            if(currInt[0] <= lastMergedInt[1]) {\n                  lastMergedInt[1] = Math.max(lastMergedInt[1], currInt[1]) \n            } else {\n                  mergedIntervals.push(currInt)\n            }\n      };\n\n      return mergedIntervals\n};"
-    },
-    {
-      "name": "anagramGroups",
-      "date": "01/09/2024",
-      "difficulty": "medium",
-      "code": "const words = [eat, tea, tan, ate, nat, bat];\n\n//reduce words to groups of anagrams\nconst anagramGroups = words.reduce((acc, word) => {\n  // strip each word to its a-z sort\n  const key = [...word].sort().join()\n  // initialize an array in the acc object with value of array or acc[key] which will be the returned data from last iteration\n  acc[key] = acc[key] || []\n  // push word to its array in the acc object\n  acc[key].push(word)\n  // return acc to update state\n  return acc\n}, {})\n\nconsole.log(anagramGroups)"
-    },
-    {
-      "name": "countDuplicates",
-      "date": "01/31/2024",
-      "difficulty": "medium",
-      "code": "function countDuplicates(arr) {\n  let sorted = [...arr].sort((a, b) => a - b)\n  \n  const duplicates = sorted.reduce((acc, number) => {\n    if(acc[number]) {\n      acc[number] ++\n    } else {\n      acc[number] = 1\n    }\n    \n    return acc\n  }, {})\n  \n  let results = {}\n  \n  for(let key in duplicates) {\n    if(duplicates[key] > 1) {\n      results[key] = duplicates[key]\n    }\n  }\n  \n  return results\n}\n\nconst inputArray = [1, 2, 3, 2, 4, 5, 1, 6, 7, 8, 7, 9, 10, 11, 10, 1];\nconsole.log(countDuplicates(inputArray));"
-    }
-  ]
+      "algorithm_storage": [
+            {
+                  "name": "palindromeChecker",
+                  "date": "06/24/2023",
+                  "difficulty": "easy",
+                  "code": "function palindromeChecker (word) {\n  let reference = ''\n  for(let i = word.length - 1; i >= 0; i --) {\n    reference += word[i]\n  }\n  \n  if(word === reference) {\n    return true\n  }\n  \n  return false\n}\n\nconsole.log(palindromeChecker('level'))"
+            },
+            {
+                  "name": "sumOfDigits",
+                  "date": "06/24/2023",
+                  "difficulty": "easy",
+                  "code": "function sumOfDigits(numbers) {\n  let stringify = numbers.toString();\n  let sum = 0;\n  \n  for (let i = 0; i < stringify.length; i++) {\n    let curr = parseInt(stringify[i], 10);\n    sum += curr;\n  }\n  \n  return sum;\n}\n\nconsole.log(sumOfDigits(4282)); // Output: 16"
+            },
+            {
+                  "name": "reverseString",
+                  "date": "06/24/2023",
+                  "difficulty": "easy",
+                  "code": "function reversal () {\n  let hello = 'hello'\n  let algo = 'algorithm'\n  let algo_rev = ''\n  let hello_rev = ''\n\n  for(let i = hello.length - 1; i >= 0; i --) {\n    hello_rev += hello[i]\n  }\n  for(let i = algo.length - 1; i >= 0; i --) {\n    algo_rev += algo[i]\n  }\n\n  return [hello_rev, algo_rev]\n}\n\nconsole.log(reversal())"
+            },
+            {
+                  "name": "findMaxNumber",
+                  "date": "06/26/2023",
+                  "difficulty": "easy",
+                  "code": "let test1 = [5, 2, 9, 1, 7]\nlet test2 = [10, 6, 3, 8, 4]\nlet test3 = [-1, -5, -3, -2, -4]\n\nfunction findMaxNumber (array) {\n  let maxNum = 0 \n  \n  for(let i = 0; i < array.length; i ++) {\n    let curr = array[i]\n    \n    if(curr > maxNum) {\n      maxNum = curr\n    }\n  }\n  \n  return maxNum\n}\n\nconsole.log(findMaxNumber(test1), findMaxNumber(test2), findMaxNumber(test3))"
+            },
+            {
+                  "name": "findMean",
+                  "date": "06/26/2023",
+                  "difficulty": "easy",
+                  "code": "let test1 = [2,6,7,8,4,3,2,1,85]\n\nfunction findMean (array) {\n  let mean;\n  let total = 0; \n  let sum = 0;\n  \n  for(let i = 0; i < array.length; i ++) {\n    sum += array[i]\n    total += 1\n  }\n  \n  mean = sum/total\n  \n  return mean;\n}\n\nconsole.log(findMean(test1))"
+            },
+            {
+                  "name": "findMinNum",
+                  "date": "06/27/2023",
+                  "difficulty": "easy",
+                  "code": "let test1 = [2,6,7,8,4,3,2,1,85]\n\nfunction findMinNum (array) {\n  let minNum = array[0];\n  \n  for(let i = 0;  i < array.length; i ++) {\n    let curr = array[i]\n    let prev = array[i  - 1]\n    \n    if(prev === undefined) {\n      continue;\n    } else if(curr < prev) {\n      minNum = curr\n    } else {\n      continue;\n    }\n  }  \n\n  return minNum\n}\n\nconsole.log(findMinNum(test1))"
+            },
+            {
+                  "name": "findVowels",
+                  "date": "06/27/2023",
+                  "difficulty": "easy",
+                  "code": "let test1 = 'Hello World';\nlet test2 = 'Javascript';\n\nfunction findVowels(string) {\n  let amount = 0;\n  let vowels = ['a', 'e', 'i', 'o', 'u'];\n  let array = string.split('');\n\n  for (let i = 0; i < array.length; i++) {\n    let curr = array[i];\n\n    if (vowels.includes(curr)) {\n      amount++;\n    }\n  }\n\n  return amount;\n}\n\nconsole.log(findVowels(test1), findVowels(test2));"
+            },
+            {
+                  "name": "cleanSentence",
+                  "date": "06/27/2023",
+                  "difficulty": "medium",
+                  "code": "const test1 ='hOW aRE yOU?'\nconst test2 = 'javascript is awesome'\n\nfunction toSentence (param) {\n  let array = param.split('')\n  let sentence = []\n  for(let i = 0; i < array.length; i ++) {\n     let curr = array[i]\n     \n     if(curr === array[0]) {\n       let item = curr.toUpperCase()\n        sentence.push(item)\n     } else {\n       let item = curr.toLowerCase()\n       sentence.push(item)\n     }\n  }\n  \n  sentence = sentence.join('')\n  \n  return sentence\n}\n\nconsole.log(toSentence(test1), toSentence(test2))"
+            },
+            {
+                  "name": "calculateFactorial",
+                  "date": "06/29/2023",
+                  "difficulty": "easy",
+                  "code": "function calculateFactorial (num) {\n  let factorial = 1;\n  \n  for(let i = num; i >= 1; i --) {\n    factorial = factorial * i\n  }\n  \n  return factorial\n}\n\nconsole.log(calculateFactorial(7))"
+            },
+            {
+                  "name": "reverseString",
+                  "date": "07/01/2023",
+                  "difficulty": "easy",
+                  "code": "let test1 = 'Hi my name is Charles'\n\nfunction reverseString (string) {\n  let reversedString = []\n  let parsedString = string.split(' ')\n  \n  for(let i = parsedString.length - 1; i >= 0; i --) {\n    console.log(parsedString[i])\n    \n    reversedString.push(parsedString[i])\n  }\n  \n  reversedString = reversedString.join(' ')\n  \n  return reversedString\n}\n\nconsole.log(reverseString(test1))"
+            },
+            {
+                  "name": "findMissingNumber",
+                  "date": "07/13/2023",
+                  "difficulty": "medium",
+                  "code": "function sortArray(array) {\n  for (let i = 0; i < array.length; i++) {\n    for (let j = i + 1; j < array.length; j++) {\n      if (array[i] > array[j]) {\n        let temp = array[i];\n        array[i] = array[j];\n        array[j] = temp;\n      }\n    }\n  }\n\n  return array;\n}\n\n\nfunction findMissingNumber (array) {\n  let missing; \n  \n  sortArray(array)\n \n  for(let i = 0; i < array.length - 1; i ++) {\n    let curr = array[i]\n    let next = array[i + 1]\n    \n    if(next - curr !== 1) {\n      missing = curr + 1\n      break;\n    }\n  }\n  \n  return missing\n}\n\nfindMissingNumber([1,3,2,7,6,5,4,9,8,11])"
+            },
+            {
+                  "name": "isAnagram",
+                  "date": "07/15/2023",
+                  "difficulty": "medium",
+                  "code": "function isAnagram (x, y) {\n  let a = x.replace(/[0-9]/g, '')\n  let b = y.replace(/[0-9]/g, '')\n  a = a.toLowerCase()\n  b = b.toLowerCase()\n  \n  if(a.length !== b.length) {\n    return 'is not anagram'\n  }\n  \n  let arrB = b.split('')\n  \n  for(let i = 0; i < a.length; i ++) {\n    let curr = a[i]\n    let idxB = arrB.indexOf(curr)\n    \n    if(idxB === -1) {\n      return 'is not anagram'\n    }\n    \n    arrB.splice(idxB, 1)\n  }\n  \n  return 'is anagram'\n}\n\nisAnagram('silen9T', 'liSten0')"
+            },
+            {
+                  "name": "isValidSubsequence",
+                  "date": "07/19",
+                  "difficulty": "Medium",
+                  "code": "function isValidSubsequence(array, sequence) {\n  let check = [];\n\n  if (array.length < sequence.length) {\n    return {\n      result: false,\n      message: 'sequence length is great than array length',\n    };\n  }\n\n  for (let i = 0; i < sequence.length; i++) {\n    let curr = sequence[i];\n    let indxOfA = array.indexOf(curr);\n\n    if (indxOfA === -1) {\n      return {\n        result: false,\n        message:\n          'An integer from the sequence array did not appear in the reference array',\n      };\n    }\n\n    check.push(indxOfA);\n  }\n\n  for (let i = 0; i < check.length - 1; i++) {\n    let curr = check[i];\n    let next = check[i + 1];\n\n    if (next !== curr + 1) {\n      return {\n        result: false,\n        message:\n          'The subsequence contained integers from the array but not in a sequential order referenced in the array',\n      };\n    }\n  }\n  \n  return {\n    result: true }"
+            },
+            {
+                  "name": "findMissingNumber-1",
+                  "date": "08/15/2023",
+                  "difficulty": "medium",
+                  "code": "function findMissingNumber(array) {\n  // set variable to house missing number\n  let missing;\n\n  // for loop to sort array\n  for (let i = 0; i < array.length; ) {\n    if (array[i] > array[i + 1]) {\n      let a = array[i];\n      array[i] = array[i + 1];\n      array[i + 1] = a;\n      i--;\n    } else {\n      i++;\n    }\n  }\n  \n  console.log(array)\n\n  // for loop to check for missing number\n  for(let i = 0; i < array.length; i ++) {\n    let curr = array[i]\n    let next = array[i + 1]\n    \n    console.log({\n      round: i,\n      curr: curr,\n      next: next\n    })\n    \n    if(next !== curr + 1) {\n      missing = curr + 1\n      \n      return missing;\n    }\n  }\n  \n  // return missing number\n  return 'No missing number';\n}\n\nfindMissingNumber([1, 4, 6, 3, 8, 9, 2, 10]);\n"
+            },
+            {
+                  "name": "sortArray",
+                  "date": "08/15/2023",
+                  "difficulty": "medium",
+                  "code": "function sortArray(array) {\n  // for loop to sort array\n  for (let i = 0; i < array.length; ) {\n    if (array[i] > array[i + 1]) {\n      let a = array[i];\n      array[i] = array[i + 1];\n      array[i + 1] = a;\n      i--;\n    } else {\n      i++;\n    }\n  }\n  \n  return array\n};\n\nsortArray([1,5,7,9,3,2,10,14])\n"
+            },
+            {
+                  "name": "simpleSpreadOperatorProblem",
+                  "date": "08/16/2023",
+                  "difficulty": "easy",
+                  "code": "function mergeArrays(a, b) {\n  return [...a, ...b]\n}\n\nconsole.log(mergeArrays([4,5,6,3], [491,728,2,3]))\n"
+            },
+            {
+                  "name": "joinArrayAddElement",
+                  "date": "08/16/2023",
+                  "difficulty": "easy",
+                  "code": "function copyAndAddElement(array, element) {\n  if(array.length <= 1) {\n    console.log('length equal to 1')\n    return [array, element]\n  }\n  return [...array, element]\n}\n\nconsole.log(copyAndAddElement([33], 4))\nconsole.log(copyAndAddElement([14,938,733], 'new element'))"
+            },
+            {
+                  "name": "findCommonKeys",
+                  "date": "08/22/2023",
+                  "difficulty": "medium",
+                  "code": "let places = {\n  '7': 'SanAntonio',\n  '5': 'Houston',\n  '4': 'Atlanta'\n}\n\nlet people = {\n  '5': 'Tony',\n  '4': 'Bill',\n  '7': 'Sarah'\n}\n\nfunction findCommonKeys (obj1, obj2) {\n    let commonKeys = []\n    \n    // loop through each key of obj1\n    for(const key in obj1) {\n      if(obj2.hasOwnProperty(key)) {\n        commonKeys.push(key)\n      }\n    }\n  \n  return commonKeys\n}\n\nfunction combineTwoObjects (obj1, obj2) {\n    commonKeys = findCommonKeys(obj1, obj2)  \n    \n    const combinedObject = {}\n    commonKeys.forEach(key => {\n      combinedObject[key] = obj1[key] + ' ' + obj2[key]\n      delete obj1[key]\n      delete obj2[key]\n    })\n  \n    return {...obj1, ...combinedObject, ...obj2}\n}\n\nconsole.log(combineTwoObjects(places, people))"
+            },
+            {
+                  "name": "findCommonCities",
+                  "date": "08/21/2023",
+                  "difficulty": "medium",
+                  "code": "let Cities = {\n  'SanAntonio': [],\n  'Houston': [],\n  'Austin': [],\n  'Dallas': [],\n  'Lubbock': []\n}\n\nlet People = {\n  'Kyle': 'San Antonio',\n  'Sam': 'Dallas',\n  'Charles': 'Austin',\n  'Jimmy': 'Lubbock',\n  'Stephanie': 'Houston',\n  'Otis': 'Houston',\n  'Aleya': 'Austin',\n}\n\nfunction FindCommonCities(cities, people) {\n  Object.entries(people).forEach(([property, value]) => {\n    if(cities[value]) {\n      cities[value].push(property)\n    }\n  })\n  \n  return cities\n}\n\nFindCommonCities(Cities, People)"
+            },
+            {
+                  "name": "filterLongWords",
+                  "date": "08/30/2023",
+                  "difficulty": "easy",
+                  "code": "const words = ['apple', 'banana', 'grape', 'strawberry', 'melon', 'character'];\nconst minLength = 6;\n\nfunction filterLongWords (array, amount) {\n  let longOnes = []\n  \n  for(let i = 0; i < array.length; i ++) {\n     if(array[i].length > amount) {\n        longOnes.push(array[i])\n     }\n  }\n  \n  return longOnes\n}\n\nconst longWords = filterLongWords(words, minLength);\nconsole.log(longWords); // Output: ['banana', 'strawberry']"
+            },
+            {
+                  "name": "int_to_roman",
+                  "date": "10/14/2023",
+                  "difficulty": "medium",
+                  "code": "function intToRom (number) {\n  const romNums = {\n    'M': 1000,\n    'CM': 900,\n    'D': 500,\n    'CD': 400,\n    'C': 100,\n    'XC': 90,\n    'L': 50,\n    'XL': 40,\n    'X': 10,\n    'IX': 9,\n    'V': 5,\n    'IV': 4,\n    'I': 1\n  }\n  \n  let result = ''\n  \n  for (const key in romNums) {\n    while(number >= romNums[key]) {\n      result += key\n      number -= romNums[key]\n    }\n  }\n  \n  return result\n}\n\nconsole.log(intToRom(78))"
+            },
+            {
+                  "name": "romanToInt",
+                  "date": "10/17/2023",
+                  "difficulty": "hard",
+                  "code": "function romToInt(numeral) {\n  const numerals = {\n    M: 1000,\n    CM: 900,\n    D: 500,\n    CD: 400,\n    C: 100,\n    XC: 90,\n    L: 50,\n    XL: 40,\n    X: 10,\n    IX: 9,\n    V: 5,\n    IV: 4,\n    I: 1\n  }\n\n  // set result and i to 0\n  \n  // result will accumulate the interpreted number translation\n  let result = 0;\n  // i will help us match the numerals to our number values for translation \n  let i = 0;\n\n  // until we've matched each roman numeral,  the loop will continue\n  while (i < numeral.length) {\n    if (i + 1 < numeral.length && numerals[numeral[i] + numeral[i + 1]]) {\n      result += numerals[numeral[i] + numeral[i + 1]];\n      i += 2;\n    } else {\n      result += numerals[numeral[i]];\n      i++;\n    }\n  }\n\n  return result;\n}\n\nconsole.log(romToInt('MMMMMMDCCLXXXIII'));"
+            },
+            {
+                  "name": "fibonacci",
+                  "date": "10/25/2023",
+                  "difficulty": "medium",
+                  "code": "function fib (n) {\n  // declare our array that will house the sequence\n  let sequence = [1]\n  // declare our curr and pre values used to create the sequencee\n  let curr = 1\n  let pre = 0\n  // conditional statement to return 1 if the n parameter is 1\n  if(n === 1) {\n    return sequence\n  }\n  // declare our counter that will count down from our number to zero\n   let counter = n - 1\n  // a while loop whose condition is counter\n  // if our condition is (counter) than while counter is above zero our while loop will stay true and continue running\n  while(counter) {\n  // define new number for sequence by adding pre to curr\n    curr += pre\n  // reassign preval by subtracting pre from curr\n     pre = curr - pre\n  // add curr to our sequence array\n     sequence.push(curr)\n  // update the counter\n    counter -= 1\n  }\n  // finally return the sequence array\n  \n  return sequence\n}\n\nconsole.log(fib(90))"
+            },
+            {
+                  "name": "cartesian_product",
+                  "date": "10/27/2023",
+                  "difficulty": "easy",
+                  "code": "function cartesian_product (setA, setB) {\n  if(!setA || !setB || !setA.length || !setB.length) {\n    return null\n  }\n  \n  const product = []\n  \n  // will loop through the next idxA of setA each iteration\n  // will loop through all indexes of setB through each iteration\n  for(let idxA = 0; idxA < setA.length; idxA ++) {\n    for(let idxB = 0; idxB < setB.length; idxB ++) {\n      product.push(setA[idxA], setB[idxB])\n    }\n  }\n  \n  return product\n}\n\nconsole.log(cartesian_product([1,2,3], [a, b, c, d, e]))"
+            },
+            {
+                  "name": "fisherYates",
+                  "date": "10/28/2023",
+                  "difficulty": "medium",
+                  "code": "/**\n * return a random set of numbers\n * @param {*[]} originalArray\n * @return {*[]}\n */\nfunction fisherYates (array) {\n  // use the slice method to create a copy of our array\n  let clone = array.slice(0);\n  \n  // for visual reference regarding the use of the slice method\n  console.log({clone: clone});\n  \n  // loop through the clone array going backwards\n  for(let i = (clone.length - 1); i > 0; i --) {\n    // grab a random index from the clone array\n    const randomIdx = Math.floor(Math.random() * (i + 1));\n    // swap the current index of clone with the randomly chosen one\n    [clone[i], clone[randomIdx]] = [clone[randomIdx], clone[i]];\n  } \n  // return our clone\n  return clone;\n}\n\nconsole.log(fisherYates([1,45,3,78,324,577,33,2,4,656]))"
+            },
+            {
+                  "name": "hammingDistance",
+                  "date": "10/28/2023",
+                  "difficulty": "easy",
+                  "code": "/**\n * @param {string} a\n * @param {string} b\n * return {number}\n*/\nfunction hammingDistance (a, b) {\n  // error check for inconsistent lengths\n  if(a.length !== b.length) {\n    throw new Error('Strings must be of same length');\n  }\n  \n  // initiate our distance variable\n  let distance = 0\n  \n  // loop through a or b to and calculate the hammingDistance\n  for(let i = 0; i < a.length; i ++) {\n    if(a[i] !== b[i]) {\n      distance ++\n    }\n  }\n  \n  // return distance\n  return distance\n}\n\nconsole.log(hammingDistance('goliatihing', 'goliantiers'))"
+            },
+            {
+                  "name": "jumpSearch",
+                  "date": "11/09/2023",
+                  "difficulty": "hard",
+                  "code": "const Comparator = require(`../utilities/comparator`);\nconst sortArray = require(`../lib/sortArray`);\n\n/**\n * Jump (block) search\n * @param {*[]} array\n * @param {*} seekElement\n * @param {function(a, b)} [comparatorCallBack]\n */\nconst jumpSearch = function (array, seekElement, comparatorCallBack = function(a, b) {\n      if(a  === b) { \n            return 0\n      } return a < b ? 1 : -1;\n}) {\n      const sortedArray = sortArray(array);\n      const comparator = new Comparator(comparatorCallBack);\n      const arrayLength = sortedArray.length;\n\n      if(!arrayLength) {\n            console.log(`no length to array`)\n            return -1\n      }\n\n      const jumpSize = Math.floor(Math.sqrt(arrayLength));\n\n      let blockStartIdx = 0;\n      let blockEndIdx = jumpSize;\n\n      while(seekElement > sortedArray[Math.min(blockEndIdx, arrayLength)]) {\n            blockStartIdx = blockEndIdx;\n            blockEndIdx += jumpSize;\n\n            if(blockStartIdx > arrayLength) {\n                  console.log(`surpassed array length during the search`)\n                  return -1\n            }\n      }\n\n      let currIdx = blockStartIdx;\n\n      while(currIdx < Math.min(blockEndIdx, arrayLength)) {\n            if(seekElement === sortedArray[currIdx]) {\n                  return sortedArray[currIdx]\n            }\n\n            currIdx += 1\n      }\n\n      return -1\n};\n\nconsole.log(jumpSearch([4,78,98,23,12,34,72,81,96], 96, comparatorCallBack = function(a, b) {\n      if(a  === b) { \n            return 0\n      } return a < b ? 1 : -1;\n}));"
+            },
+            {
+                  "name": "generateFibSequence",
+                  "date": "11/21/2023",
+                  "difficulty": "easy",
+                  "code": "function generateFibSequence(n) {\n      // if n is less than 0, equal to 1, or equal to 2 return [], [0], or [0, 1]\n      if(n <= 0) {\n            return []\n      } else if(n === 1) {\n            return [0]\n      } else if(n === 2) {\n            return [0, 1]\n      }\n\n      // use Array constructor to create an array with (n) indexes and fill method to fill all with null\n      const sequence = Array(n).fill(null);\n\n      // initiate first two numbers of the sequence array\n      sequence[0] = 0;\n      sequence[1] = 1;\n\n      // for loop to generate the sequence\n      for(let i = 2; i < n; i ++) {\n            sequence[i] = sequence[i - 1] + sequence[i - 2]\n      }\n\n      // return the sequence\n      return sequence;\n};\n\nconsole.log(generateFibSequence(50));"
+            },
+            {
+                  "name": "binarySearch",
+                  "date": "01/04/2024",
+                  "difficulty": "medium",
+                  "code": "/**\n * Binary search implementation.\n * @param {*[]} array\n * @param {*} seekEl\n * @param {function(a, b)} [comparatorCallBack]\n * @return {number}\n */\nfunction binarySearch(array, seekEl, comparatorCallBack) {\n      // requires Comparator and sortArray functions/classes\n\n      // sort the array\n      const sortedArray = sortArray(array);\n\n      // initiate the comparator function \n      let comparator = new Comparator(comparatorCallBack)\n\n      // declare start and end index for the search process\n      let startIdx = 0;\n      let endIdx = array.length - 1;\n\n      // write for loop used in search process\n      while (startIdx <= endIdx) {\n            // each loop through calculate the new middle index\n            const middleIdx = startIdx + Math.floor((endIdx - startIdx) / 2);\n\n            // return the seekEl if found\n            if (comparator.equal(sortedArray[middleIdx], seekEl)) {\n                  return sortedArray[middleIdx];\n            };\n\n            // seek on left or right side according to below condition\n            // thus 'chopping the sort area in half'\n            if (comparator.lessThan(sortedArray[middleIdx], seekEl)) {\n                  // right\n                  startIdx = middleIdx + 1\n            } else {\n                  // left\n                  endIdx = middleIdx - 1\n            }\n      };\n\n      // return -1 (false) if not found\n      return -1;\n};"
+            },
+            {
+                  "name": "levenshteinDistance",
+                  "date": "01/04/2024",
+                  "difficulty": "medium",
+                  "code": "function levenshteinDistance (a, b) {\n      // create an array equal in length to the length of b + 1 and fill with null values\n      // then map through each index and fill that index with a subarray equal in length to a + 1 and fill with null values\n      const fillB = Array(b.length + 1).fill(null);\n      const distanceMatrix = fillB.map(() => {\n            return Array(a.length + 1).fill(null)\n      })\n\n      return distanceMatrix;\n};\n\nconsole.log(levenshteinDistance('homosapien', 'ape'));"
+            },
+            {
+                  "name": "mergeIntervals",
+                  "date": "01/04/2024",
+                  "difficulty": "hard",
+                  "code": "function mergeIntervals (intervals) {\n      // return intervals array if theres only one interval item\n      if(intervals.length <= 1) {\n            return intervals;\n      };\n\n      // sort each interval item\n      // for ex: index 2 is [3, 1] so the sort function would change it to [1, 3]\n      intervals.sort((a, b) => {\n            a[0] - b[0]\n      });\n\n      // this is where we will store our interval sets\n      // we start with intervals zero but will amend it in the for loop below if need be\n      let mergedIntervals = [intervals[0]];\n      \n      //our for loop\n      // start at index 1 of intervals because we've already placed 0 in the merged array\n      // set currInt and lastMerged\n      // condition which will execute if a change marker is identified\n      // else merge currInt\n      for(let i = 1; i < intervals.length; i ++) {\n            let currInt = intervals[i]\n            let lastMergedInt = mergedIntervals[mergedIntervals.length - 1]\n\n            if(currInt[0] <= lastMergedInt[1]) {\n                  lastMergedInt[1] = Math.max(lastMergedInt[1], currInt[1]) \n            } else {\n                  mergedIntervals.push(currInt)\n            }\n      };\n\n      return mergedIntervals\n};"
+            },
+            {
+                  "name": "anagramGroups",
+                  "date": "01/09/2024",
+                  "difficulty": "medium",
+                  "code": "const words = [eat, tea, tan, ate, nat, bat];\n\n//reduce words to groups of anagrams\nconst anagramGroups = words.reduce((acc, word) => {\n  // strip each word to its a-z sort\n  const key = [...word].sort().join()\n  // initialize an array in the acc object with value of array or acc[key] which will be the returned data from last iteration\n  acc[key] = acc[key] || []\n  // push word to its array in the acc object\n  acc[key].push(word)\n  // return acc to update state\n  return acc\n}, {})\n\nconsole.log(anagramGroups)"
+            },
+            {
+                  "name": "countDuplicates",
+                  "date": "01/31/2024",
+                  "difficulty": "medium",
+                  "code": "function countDuplicates(arr) {\n  let sorted = [...arr].sort((a, b) => a - b)\n  \n  const duplicates = sorted.reduce((acc, number) => {\n    if(acc[number]) {\n      acc[number] ++\n    } else {\n      acc[number] = 1\n    }\n    \n    return acc\n  }, {})\n  \n  let results = {}\n  \n  for(let key in duplicates) {\n    if(duplicates[key] > 1) {\n      results[key] = duplicates[key]\n    }\n  }\n  \n  return results\n}\n\nconst inputArray = [1, 2, 3, 2, 4, 5, 1, 6, 7, 8, 7, 9, 10, 11, 10, 1];\nconsole.log(countDuplicates(inputArray));"
+            }
+      ]
 }
