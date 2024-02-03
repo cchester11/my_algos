@@ -17,8 +17,8 @@ const sortedJsonNames = jsonNames.sort();
 
 // must match exactly
 // must be same number of lib folder names and object name property names
-function compareNamesArrays (libNames, jsonNames) {
-      if(libNames.length !== jsonNames.length) {
+function compareNamesArrays (libNames, sortedJsonNames) {
+      if(libNames.length !== sortedJsonNames.length) {
             return false
       }
 
