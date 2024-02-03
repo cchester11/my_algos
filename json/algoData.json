@@ -55,12 +55,6 @@
                   "code": "function calculateFactorial (num) {\n  let factorial = 1;\n  \n  for(let i = num; i >= 1; i --) {\n    factorial = factorial * i\n  }\n  \n  return factorial\n}\n\nconsole.log(calculateFactorial(7))"
             },
             {
-                  "name": "reverseString",
-                  "date": "07/01/2023",
-                  "difficulty": "easy",
-                  "code": "let test1 = 'Hi my name is Charles'\n\nfunction reverseString (string) {\n  let reversedString = []\n  let parsedString = string.split(' ')\n  \n  for(let i = parsedString.length - 1; i >= 0; i --) {\n    console.log(parsedString[i])\n    \n    reversedString.push(parsedString[i])\n  }\n  \n  reversedString = reversedString.join(' ')\n  \n  return reversedString\n}\n\nconsole.log(reverseString(test1))"
-            },
-            {
                   "name": "findMissingNumber",
                   "date": "07/13/2023",
                   "difficulty": "medium",

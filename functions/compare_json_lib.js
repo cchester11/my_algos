@@ -13,13 +13,19 @@ let jsonNames = Object.entries(data.algorithm_storage).map(([key, algorithm]) =>
       return name
 })
 
-console.log(fileNames)
-
 const sortedJsonNames = jsonNames.sort();
-console.log(sortedJsonNames)
 
 // must match exactly
 // must be same number of lib folder names and object name property names
+function compareNamesArrays (libNames, jsonNames) {
+      if(libNames.length !== jsonNames.length) {
+            return false
+      }
+
+      return true
+}
 
 // return true if all match and lengths are equal
 // return this mismatches or extra names if lengths are not equal
+
+console.log(compareNamesArrays(fileNames, jsonNames))
