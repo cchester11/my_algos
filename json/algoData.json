@@ -19,6 +19,12 @@
                   "code": "function reversal () {\n  let hello = 'hello'\n  let algo = 'algorithm'\n  let algo_rev = ''\n  let hello_rev = ''\n\n  for(let i = hello.length - 1; i >= 0; i --) {\n    hello_rev += hello[i]\n  }\n  for(let i = algo.length - 1; i >= 0; i --) {\n    algo_rev += algo[i]\n  }\n\n  return [hello_rev, algo_rev]\n}\n\nconsole.log(reversal())"
             },
             {
+                  "name": "reverseString",
+                  "date": "02/03/2024",
+                  "difficulty": "easy",
+                  "code": "function"
+            },
+            {
                   "name": "findMaxNumber",
                   "date": "06/26/2023",
                   "difficulty": "easy",
