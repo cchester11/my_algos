@@ -21,10 +21,6 @@ function compareArrays(json, lib) {
       // If lengths do not match
       if (json.length !== lib.length) {
             for (let i = 0; i < json.length; i++) {
-                  console.log({
-                        json: json[i],
-                        lib: lib[i]
-                  });
                   if (json[i] !== lib[i]) {
                         // Return mismatch from json
                         return {
@@ -57,3 +53,4 @@ function compareArrays(json, lib) {
 }
 
 console.log(compareArrays(jsonNames, fileNames))
+// Output: {message: "lengths do not match", culprit: 'reverseString'}
