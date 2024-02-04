@@ -1,7 +1,7 @@
+// dependents
 const fs = require('fs');
 const path = require('path');
 const data = require('../json/algoData.json');
-
 const libPath = path.join(__dirname, '../lib');
 
 // extract names of all lib folder files
@@ -13,33 +13,55 @@ let jsonNames = Object.entries(data.algorithm_storage).map(([key, algorithm]) =>
       return name
 })
 
-const sortedJsonNames = jsonNames.sort();
+// log the lib names array and json names array
+console.log({
+      lib: fileNames,
+      json: jsonNames
+})
 
-// must match exactly
-// must be same number of lib folder names and object name property names
-function compareNamesArrays (libNames, jsonNames) {
-      console.log({
-            libLength: libNames.length,
-            jsonLength: sortedJsonNames.length
-      })
+// function for comparing the arrays
+function compareArrays(json, lib) {
+      // sort arrays
+      json = json.sort()
+      lib = lib.sort()
 
-      if(libNames.length !== jsonNames.length) {
-            for(let i = 0; i < libNames.length; i ++) {
-                  if(libNames[i] !== jsonNames[i]) {
+      // if lengths do not match
+      if (json.length !== lib.length) {
+            // loop through to identify mismatch
+            for (let i = 0; i < json.length; i++) {
+                  console.log({
+                        json: json[i],
+                        lib: lib[i]
+                  })
+                  if (json[i] !== lib[i]) {
+                        // return mismatch from json
                         return {
-                              message: "lengths do not match",
-                              jsonNames: jsonNames[i]
-                        }
+                              message: 'lengths do not match',
+                              json: json[i],
+                        };
                   }
             }
+
+            // return  'cannot find  mismatch' if error
             return {
-                  value: null,
-                  message: "cannot find the mismatch"
+                  value: 'error',
+                  message: 'cannot find the mismatch',
             };
       }
+
+      // if lengths match
+      for (let i = 0; i < json.length; i++) {
+            if (json[i] !== lib[i]) {
+                  return {
+                        message: 'identified',
+                        mismatch: json[i],
+                  };
+            }
+      }
+
+      return {
+            message: 'no errors',
+      };
 }
 
-// return true if all match and lengths are equal
-// return this mismatches or extra names if lengths are not equal
-
-console.log(compareNamesArrays(fileNames, sortedJsonNames))
+console.log(compareArrays(jsonNames, fileNames))
