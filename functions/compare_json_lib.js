@@ -13,37 +13,35 @@ let jsonNames = Object.entries(data.algorithm_storage).map(([key, algorithm]) =>
       return name
 })
 
-// function for comparing the arrays
 function compareArrays(json, lib) {
-      // sort arrays
-      json = json.sort()
-      lib = lib.sort()
+      // Sort arrays
+      json = json.sort();
+      lib = lib.sort();
 
-      // if lengths do not match
+      // If lengths do not match
       if (json.length !== lib.length) {
-            // loop through to identify mismatch
             for (let i = 0; i < json.length; i++) {
                   console.log({
                         json: json[i],
                         lib: lib[i]
-                  })
+                  });
                   if (json[i] !== lib[i]) {
-                        // return mismatch from json
+                        // Return mismatch from json
                         return {
                               message: 'lengths do not match',
-                              json: json[i],
+                              culprit: json[i]
                         };
                   }
             }
 
-            // return  'cannot find  mismatch' if error
+            // Return 'cannot find mismatch' if error
             return {
                   value: 'error',
                   message: 'cannot find the mismatch',
             };
       }
 
-      // if lengths match
+      // If lengths match
       for (let i = 0; i < json.length; i++) {
             if (json[i] !== lib[i]) {
                   return {
