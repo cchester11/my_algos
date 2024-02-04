@@ -13,12 +13,6 @@ let jsonNames = Object.entries(data.algorithm_storage).map(([key, algorithm]) =>
       return name
 })
 
-// log the lib names array and json names array
-console.log({
-      lib: fileNames,
-      json: jsonNames
-})
-
 // function for comparing the arrays
 function compareArrays(json, lib) {
       // sort arrays
