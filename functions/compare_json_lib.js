@@ -27,6 +27,7 @@ const deletionQuery = async (culprit) => {
             }
       ])
       .then(answers  => {
+            // write deletion logic here
             console.log(answers)
       })
       .catch(err => {
