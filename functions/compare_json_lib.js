@@ -14,6 +14,26 @@ let jsonNames = Object.entries(data.algorithm_storage).map(([key, algorithm]) =>
       return name
 })
 
+const deletionQuery = async (culprit) => {
+      await inquirer.prompt([
+            {
+                  type: "list",
+                  name: "deletionJson",
+                  message: `The name ${culprit} was found in the json. Would you like to delete this json object?`,
+                  choices: [
+                        "Yes",
+                        "No"
+                  ]
+            }
+      ])
+      .then(answers  => {
+            console.log(answers)
+      })
+      .catch(err => {
+            throw new Error(err)
+      })
+}
+
 async function compareArrays(json, lib) {
       // Sort arrays
       json = json.sort();
@@ -24,23 +44,9 @@ async function compareArrays(json, lib) {
             for (let i = 0; i < json.length; i++) {
                   if (json[i] !== lib[i]) {
                         // Return mismatch from json
-                        await inquirer.prompt([
-                              {
-                                    type: "list",
-                                    name: "deletionJson",
-                                    message: `The name ${json[i]} was found in the json. Would you like to delete this json object?`,
-                                    choices: [
-                                          "Yes",
-                                          "No"
-                                    ]
-                              }
-                        ])
-                        .then(answers  => {
-                              console.log(answers)
-                        })
-                        .catch(err => {
-                              throw new Error(err)
-                        })
+                        deletionQuery(json[i])
+
+                        return 
                   }
             }
 
