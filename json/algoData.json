@@ -203,6 +203,12 @@
       "date": "02/20/2024",
       "difficulty": "easy",
       "code": "function findPairs (array, integer) {\n  let pairs = [];\n  const sorted = array.sort((a, b) => a -  b);\n  let pointers = [];\n  \n  for(let i = 0; i < sorted.length; i ++) {\n    let pointer = sorted[i]\n    \n    if(pointers.includes(pointer)) {\n      continue;\n    }\n    \n    pointers.push(pointer)\n  \n    for(let j = i + 1; j < sorted.length; j ++) {\n      let sum = sorted[i] + sorted[j]\n      let finder = sorted[j]\n      \n      if(sum === integer) {\n        pairs.push([pointer, finder])\n      }\n    }\n  }\n  \n  return pairs;\n}\n\nconsole.log(findPairs([1,4,6,5,4,3,7], 11))\n// [[6, 5], [7, 4]]\nconsole.log(findPairs([6,9,2,3,4,11,2,3], 15))\n// [[6, 9], [4, 11]]"
+    },
+    {
+      "name": "findMostCommonCharacters",
+      "date": "02/20/2024",
+      "difficulty": "medium",
+      "code": "const findMostCommonCharacters = (string) => {\n  // establish a variable for common characters storage\n  let commonCharacters = {}\n  // split the string\n  let characters = string.toLowerCase().replace(/[^a-z]/g, );\n  \n  // loop through characters and store each character with its respective key\n  for(let i = 0; i < characters.length; i ++) {\n    let curr = characters[i]\n    \n    if(commonCharacters[curr]) {\n      commonCharacters[curr] ++\n    } else {\n      commonCharacters[curr] = 1\n    }\n  }\n  \n  let max = 0;\n  let mostCommon = [];\n  \n  // find key in duplicates with highest value\n  for(let key in commonCharacters) {\n    if(commonCharacters[key] > max) {\n      max = commonCharacters[key]\n      mostCommon = [key]\n    } else if(commonCharacters[key] === max) {\n      mostCommon.push(key)\n    }\n  }\n  \n  return {\n    max: max,\n    characters: mostCommon\n  };\n}"
     }
   ]
 }
