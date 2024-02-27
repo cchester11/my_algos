@@ -215,6 +215,12 @@
       "date": "02/27/2024",
       "difficulty": "medium",
       "code": "function returnMissingAndDuplicate (nums) {\n  let duplicate = 0;\n  let missing = 0;\n  \n  const sorted = nums.sort((a, b) => a - b);\n  \n  for(let i = 0; i < sorted.length; i ++) {\n    let next = sorted[i + 1]\n    let curr = sorted[i]\n    \n    if(next - curr !== 1) {\n      missing = curr - 1\n    }\n  }\n  \n  sorted.reduce((acc, num) => {\n    if(acc[num]) {\n      duplicate = acc[num]\n      \n      return acc\n    } else {\n      acc[num] = num\n      \n      return acc\n    }\n  }, {})\n  \n  return {\n    missing: missing,\n    duplicate: duplicate\n  }\n}\n\nconsole.log(returnMissingAndDuplicate([3, 1, 0, 2, 5, 3]));"
+    },
+    {
+      "name": "isValidBracket",
+      "date": "02/27/2024",
+      "difficulty": "hard",
+      "code": "const isValidBracket = (string) => {\n  let map = {\n    '{': 1,\n    '}': 2,\n    '(': 3,\n    ')': 4,\n    '[': 5,\n    ']': 6\n  }\n  \n  for (i = 0; i < string.length; i ++) {\n    let curr = string[i]\n    let next = string[i + 1]\n    let nextNext = string[i + 2]\n    \n    if(map[curr] !== undefined) {\n      if(map[next] - map[curr] !== 1) {\n        if(map[nextNext]) {\n          if(map[nextNext] - map[next] !== 1) {\n            return false\n          }\n        }\n      }\n    }\n  }\n  \n  return true; // Valid sequence of brackets\n};\n\nconsole.log(isValidBracket('()[]{}[]')); // true\nconsole.log(isValidBracket('[){}(]')); // false"
     }
   ]
 }
