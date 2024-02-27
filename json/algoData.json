@@ -209,6 +209,12 @@
       "date": "02/20/2024",
       "difficulty": "medium",
       "code": "const findMostCommonCharacters = (string) => {\n  // establish a variable for common characters storage\n  let commonCharacters = {}\n  // split the string\n  let characters = string.toLowerCase().replace(/[^a-z]/g, );\n  \n  // loop through characters and store each character with its respective key\n  for(let i = 0; i < characters.length; i ++) {\n    let curr = characters[i]\n    \n    if(commonCharacters[curr]) {\n      commonCharacters[curr] ++\n    } else {\n      commonCharacters[curr] = 1\n    }\n  }\n  \n  let max = 0;\n  let mostCommon = [];\n  \n  // find key in duplicates with highest value\n  for(let key in commonCharacters) {\n    if(commonCharacters[key] > max) {\n      max = commonCharacters[key]\n      mostCommon = [key]\n    } else if(commonCharacters[key] === max) {\n      mostCommon.push(key)\n    }\n  }\n  \n  return {\n    max: max,\n    characters: mostCommon\n  };\n}"
+    },
+    {
+      "name": "returnMissingAndDuplicate",
+      "date": "02/27/2024",
+      "difficulty": "medium",
+      "code": "function returnMissingAndDuplicate (nums) {\n  let duplicate = 0;\n  let missing = 0;\n  \n  const sorted = nums.sort((a, b) => a - b);\n  \n  for(let i = 0; i < sorted.length; i ++) {\n    let next = sorted[i + 1]\n    let curr = sorted[i]\n    \n    if(next - curr !== 1) {\n      missing = curr - 1\n    }\n  }\n  \n  sorted.reduce((acc, num) => {\n    if(acc[num]) {\n      duplicate = acc[num]\n      \n      return acc\n    } else {\n      acc[num] = num\n      \n      return acc\n    }\n  }, {})\n  \n  return {\n    missing: missing,\n    duplicate: duplicate\n  }\n}\n\nconsole.log(returnMissingAndDuplicate([3, 1, 0, 2, 5, 3]));"
     }
   ]
 }
