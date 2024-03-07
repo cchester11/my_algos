@@ -221,6 +221,12 @@
       "date": "02/27/2024",
       "difficulty": "hard",
       "code": "const isValidBracket = (string) => {\n  let map = {\n    '{': 1,\n    '}': 2,\n    '(': 3,\n    ')': 4,\n    '[': 5,\n    ']': 6\n  }\n  \n  for (i = 0; i < string.length; i ++) {\n    let curr = string[i]\n    let next = string[i + 1]\n    let nextNext = string[i + 2]\n    \n    if(map[curr] !== undefined) {\n      if(map[next] - map[curr] !== 1) {\n        if(map[nextNext]) {\n          if(map[nextNext] - map[next] !== 1) {\n            return false\n          }\n        }\n      }\n    }\n  }\n  \n  return true; // Valid sequence of brackets\n};\n\nconsole.log(isValidBracket('()[]{}[]')); // true\nconsole.log(isValidBracket('[){}(]')); // false"
+    },
+    {
+      "name": "exceptSelf",
+      "date": "03/07/2024",
+      "difficulty": "hard",
+      "code": "const exceptSelf = (array) => {\n  let forArr = [1];\n  let placeholder = 1;\n  \n  for(let i = 1; i < array.length; i ++) {\n    forArr[i] = placeholder * array[i - 1];\n    \n    placeholder = array[i - 1]\n  }\n  \n  let resArr = [1];\n  placeholder = 1;\n  \n  for(let i = array.length - 1; i >= 0; i --) {\n    resArr[i] = 1;\n    \n    resArr[i] *= placeholder;\n    \n    placeholder *= array[i]\n  }\n  \n  let endArr = new Array(array.length).fill(1);\n  \n  for(let i = 0; i < array.length; i ++) {\n    let a = forArr[i]\n    let b = resArr[i]\n    \n    endArr[i] = a * b\n  }\n  \n  return {\n    forArr,\n    resArr,\n    endArr\n  }\n};"
     }
   ]
 }
